@@ -17,7 +17,7 @@
         <img src="Icons/lightModePink.svg" alt="Bullrun Brewery primary logo">
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href=#>Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#products">Shop</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -25,7 +25,8 @@
         </nav>
         <!-- Toggle switch between Light and Dark mode -->
         <button id="lightDarkMode">
-            <img src="/Icons/sun.svg" alt="light mode icon">
+            <img src="/Icons/sun.svg" alt="light mode icon" class="hidden" id="sun">
+            <img src="/Icons/moon.svg" alt="dark mode icon" id="moon">
         </button>
     </header>
 
@@ -40,11 +41,13 @@
 
         <section id="about">
             <img src="Images/exterior.png" alt="Exterior shot of Bullrun Brewery in Flagstaff, Arizona">
-            <h2>Who we are</h2>
-            <p>Here at <span class=bullrunBrewery>Bullrun Brewery</span>, craft and community meets passion &amp; creativity.</p>
-            <p>Founded by a couple fueled by a dream to bring people from all over the world together, Bullrun embodies artisanal brewing at its finest. From crisp lagers, to robust ales and hoppy IPAs, each brew is crafted with locally sourced ingredients for an unforgettable experience.</p>
-            <p>But Bullrun is more than beer — it's a haven for camaraderie and adventure. Join us and become part of our story of passion, perseverance, and the vibrant spirit of the Northern Arizona mountains.</p>
-            <p>Cheers!</p>
+            <div id="about-description">
+                <h2>Who we are</h2>
+                <p>Here at <span class=bullrunBrewery>Bullrun Brewery</span>, craft and community meets passion &amp; creativity.</p>
+                <p>Founded by a couple fueled by a dream to bring people from all over the world together, Bullrun embodies artisanal brewing at its finest. From crisp lagers, to robust ales and hoppy IPAs, each brew is crafted with locally sourced ingredients for an unforgettable experience.</p>
+                <p>But Bullrun is more than beer — it's a haven for camaraderie and adventure. Join us and become part of our story of passion, perseverance, and the vibrant spirit of the Northern Arizona mountains.</p>
+                <p>Cheers!</p>
+            </div>
         </section>
 
         <section id="products">
@@ -96,16 +99,16 @@
     <footer>
         <img src="Icons/darkModePink.svg" alt="">
         <ul class="footerNav">
-            <li href="#">Home</li>
-            <li href="#about">About</li>
-            <li href="#products">Shop</li>
-            <li href="#contact">Contact</li>
+            <li><a href=#>Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#products">Shop</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
         <ul class="socialMediaIcons">
-            <li><img src="Icons/instagram.svg"></li>
-            <li><img src="Icons/X.svg"></li>
-            <li><img src="Icons/facebook.svg"></li>
-            <li><img src="Icons/tiktok.svg"></li>
+            <li><a href=#><img src="Icons/instagram.svg"></a></li>
+            <li><a href=#><img src="Icons/X.svg"></a></li>
+            <li><a href=#><img src="Icons/facebook.svg"></a></li>
+            <li><a href=#><img src="Icons/tiktok.svg"></a></li>
         </ul>
     </footer>
 
