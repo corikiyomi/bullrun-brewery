@@ -50,6 +50,11 @@ nav ul li a {
     text-decoration: none;
 }
 
+nav ul li a:hover {
+    text-decoration: underline 4px solid #FF004C;
+    font-weight: 600;
+}
+
 nav ul li a:visited {
     color: #1A1A1A;
 }
