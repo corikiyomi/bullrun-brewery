@@ -297,7 +297,23 @@ h1 {
     bottom: 45px;
 }
 
+#drinkware .addToCart, #accessories .addToCart {
+    position: relative;
+    top: 25px;
+}
 
+#accessories {
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+#accessories h3 {
+    padding-top: 20px;
+}
+
+#drinkware3, #accessories3 {
+    padding-top: 70px;
+}
 
 #cheersVideo {
     width: 100%;
