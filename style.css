@@ -67,7 +67,7 @@ nav ul li a:visited {
 }
 
 #lightDarkMode img {
-    /* position: relative; */
+    position: relative;
     width: 20px;
     height: 20px;
 }
@@ -118,7 +118,8 @@ h1 {
 }
 
 #about {
-    columns: 2;
+    column-count: 2;
+    /* column-gap: 50px; */
 }
 
 #about img {
@@ -126,6 +127,32 @@ h1 {
     height: 923px;
 }
 
-#about > h2 {
+#about-description {
+    padding: 150px 125px 0 125px;
+}
+
+#about h2 {
+    font-family: "Orbitron";
+    font-weight: 600;
+    font-size: 2.5rem;
     margin-top: 0;
+    text-decoration: underline 6px solid #FF004C;
+}
+#about p:first-of-type {
+    padding-top: 2rem;
+}
+
+#about p:last-of-type {
+    padding-top: 1.5rem;
+}
+
+#about p {
+    line-height: 2rem;
+    text-align: justify;
+}
+
+.bullrunBrewery {
+    font-family: "Orbitron";
+    font-weight: 800;
+    text-transform: uppercase;
 }

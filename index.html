@@ -1,120 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=1280px, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap">
-    
-    <title>Bullrun Brewery</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=1280px, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap">
+        
+        <title>Bullrun Brewery</title>
+    </head>
 
-<body>
-    <header>
-        <img src="Icons/lightModePink.svg" alt="Bullrun Brewery primary logo">
-        <nav>
-            <ul>
+    <body>
+        <header>
+            <img src="Icons/lightModePink.svg" alt="Bullrun Brewery primary logo">
+            <nav>
+                <ul>
+                    <li><a href=#>Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#products">Shop</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <!-- Toggle switch between Light and Dark mode -->
+            <button id="lightDarkMode">
+                <img src="/Icons/sun.svg" alt="light mode icon" class="hidden" id="sun">
+                <img src="/Icons/moon.svg" alt="dark mode icon" id="moon">
+            </button>
+        </header>
+
+        <main>
+            <h1><span class=semibold>Run</span> with the <span class=bold>bulls</span></h1>
+
+            <section id="hero">
+                <video width="1280" height="640" autoplay loop muted>
+                    <source src="/Videos/draught-pour.mp4" type="video/mp4">
+                </video>
+            </section>
+
+            <section id="about">
+                <img src="Images/exterior.png" alt="Exterior shot of Bullrun Brewery in Flagstaff, Arizona">
+                <div id="about-description">
+                    <h2>Who we are</h2>
+                    <p>Here at <span class=bullrunBrewery>Bullrun Brewery</span>, craft and community meets passion &amp; creativity.</p>
+                    <p>Founded by a couple fueled by a dream to bring people from all over the world together, Bullrun embodies artisanal brewing at its finest. From crisp lagers, to robust ales and hoppy IPAs, each brew is crafted with locally sourced ingredients for an unforgettable experience.</p>
+                    <p>But Bullrun is more than beer — it's a haven for camaraderie and adventure. Join us and become part of our story of passion, perseverance, and the vibrant spirit of the Northern Arizona mountains.</p>
+                    <p>Cheers!</p>
+                </div>
+            </section>
+
+            <section id="products">
+                <h2>Shop our stuff</h2>
+                <section class="product-type">
+                    <h3>Apparel</h3>                
+                </section>
+                <section class="product-type">
+                    <h3>Drinkware</h3>
+                </section>
+                <section class="product-type">
+                    <h3>Accessories &amp; little things</h3>
+                </section>
+            </section>
+
+            <video width="1280" height="504" autoplay loop muted>
+                <source src="Videos/cheers.mp4" type="video/mp4">
+            </video>
+        
+            <section id="contact">
+                <h2>Contact Us</h2>
+                <p>Have a question or want to leave us a comment? Interested in working with us for an event or want to work for <span class="bullrunBrewery"> Bullrun Brewery</span>?</p>
+                <p>Fill out the form below! We would love to talk you more about it. We'll get back to you within 48 hours. Promise!</p>
+                <form>
+                    <label for="first">First name</label>
+                    <input type="text" id="first" name="first">
+
+                    <label for="last">Last name</label>
+                    <input type="text" id="last" name="last">
+
+                    <label for="preferredContactMethod">Preferred contact method</label>
+                    <input type="radio" id="preferredContactMethod" name="preferredContactMethod">
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email">
+
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone">
+
+                    <label for="comments">What can we do for you? Give it to us straight. The more details the better.</label>
+                    <textarea name="comments" rows="10" cols="70"></textarea>
+
+                    <input type="reset" value="Clear form">
+                    <button id="submit">Submit</button>
+                </form>
+                <button id="backToTop"><a href="#">Back to top<img src="Icons/upArrow.svg"></a></button>
+            </section>
+        </main>
+        <footer>
+            <img src="Icons/darkModePink.svg" alt="">
+            <ul class="footerNav">
                 <li><a href=#>Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#products">Shop</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-        </nav>
-        <!-- Toggle switch between Light and Dark mode -->
-        <button id="lightDarkMode">
-            <img src="/Icons/sun.svg" alt="light mode icon" class="hidden" id="sun">
-            <img src="/Icons/moon.svg" alt="dark mode icon" id="moon">
-        </button>
-    </header>
-
-    <main>
-        <h1><span class=semibold>Run</span> with the <span class=bold>bulls</span></h1>
-
-        <section id="hero">
-            <video width="1280" height="640" autoplay loop muted>
-                <source src="/Videos/draught-pour.mp4" type="video/mp4">
-            </video>
-        </section>
-
-        <section id="about">
-            <img src="Images/exterior.png" alt="Exterior shot of Bullrun Brewery in Flagstaff, Arizona">
-            <div id="about-description">
-                <h2>Who we are</h2>
-                <p>Here at <span class=bullrunBrewery>Bullrun Brewery</span>, craft and community meets passion &amp; creativity.</p>
-                <p>Founded by a couple fueled by a dream to bring people from all over the world together, Bullrun embodies artisanal brewing at its finest. From crisp lagers, to robust ales and hoppy IPAs, each brew is crafted with locally sourced ingredients for an unforgettable experience.</p>
-                <p>But Bullrun is more than beer — it's a haven for camaraderie and adventure. Join us and become part of our story of passion, perseverance, and the vibrant spirit of the Northern Arizona mountains.</p>
-                <p>Cheers!</p>
-            </div>
-        </section>
-
-        <section id="products">
-            <h2>Shop our stuff</h2>
-            <section class="product-type">
-                <h3>Apparel</h3>                
-            </section>
-            <section class="product-type">
-                <h3>Drinkware</h3>
-            </section>
-            <section class="product-type">
-                <h3>Accessories &amp; little things</h3>
-            </section>
-        </section>
-
-        <video width="1280" height="504" autoplay loop muted>
-            <source src="Videos/cheers.mp4" type="video/mp4">
-        </video>
-    
-        <section id="contact">
-            <h2>Contact Us</h2>
-            <p>Have a question or want to leave us a comment? Interested in working with us for an event or want to work for <span class="bullrunBrewery"> Bullrun Brewery</span>?</p>
-            <p>Fill out the form below! We would love to talk you more about it. We'll get back to you within 48 hours. Promise!</p>
-            <form>
-                <label for="first">First name</label>
-                <input type="text" id="first" name="first">
-
-                <label for="last">Last name</label>
-                <input type="text" id="last" name="last">
-
-                <label for="preferredContactMethod">Preferred contact method</label>
-                <input type="radio" id="preferredContactMethod" name="preferredContactMethod">
-
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email">
-
-                <label for="phone">Phone</label>
-                <input type="tel" id="phone" name="phone">
-
-                <label for="comments">What can we do for you? Give it to us straight. The more details the better.</label>
-                <textarea name="comments" rows="10" cols="70"></textarea>
-
-                <input type="reset" value="Clear form">
-                <button id="submit">Submit</button>
-            </form>
-            <button id="backToTop"><a href="#">Back to top<img src="Icons/upArrow.svg"></a></button>
-        </section>
-    </main>
-    <footer>
-        <img src="Icons/darkModePink.svg" alt="">
-        <ul class="footerNav">
-            <li><a href=#>Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#products">Shop</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <ul class="socialMediaIcons">
-            <li><a href=#><img src="Icons/instagram.svg"></a></li>
-            <li><a href=#><img src="Icons/X.svg"></a></li>
-            <li><a href=#><img src="Icons/facebook.svg"></a></li>
-            <li><a href=#><img src="Icons/tiktok.svg"></a></li>
-        </ul>
-    </footer>
+            <ul class="socialMediaIcons">
+                <li><a href=#><img src="Icons/instagram.svg"></a></li>
+                <li><a href=#><img src="Icons/X.svg"></a></li>
+                <li><a href=#><img src="Icons/facebook.svg"></a></li>
+                <li><a href=#><img src="Icons/tiktok.svg"></a></li>
+            </ul>
+        </footer>
 
 
-    <script>
+        <script>
 
-    </script>
-</body>
+        </script>
+    </body>
 </html>
