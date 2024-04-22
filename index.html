@@ -166,25 +166,27 @@
                 <p>Fill out the form below! We would love to talk you more about it. We'll get back to you within 48 hours. Promise!</p>
                 <form>
                     <label for="first">First name</label>
-                    <input type="text" id="first" name="first">
+                    <input type="text" id="first" name="first" placeholder="Required" required>
 
                     <label for="last">Last name</label>
-                    <input type="text" id="last" name="last">
+                    <input type="text" id="last" name="last" placeholder="Required" required>
 
                     <label for="preferredContactMethod">Preferred contact method</label>
-                    <input type="radio" id="preferredContactMethod" name="preferredContactMethod">
+                    <input type="radio" id="preferredContactMethod" name="preferredContactMethod" required>
 
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email">
+                    <input type="email" id="email" name="email" placeholder="myemail@gmail.com">
 
                     <label for="phone">Phone</label>
-                    <input type="tel" id="phone" name="phone">
+                    <input type="tel" id="phone" name="phone" placeholder="(###) ### - ####">
 
-                    <label for="comments">What can we do for you? Give it to us straight. The more details the better.</label>
-                    <textarea name="comments" rows="10" cols="70"></textarea>
+                    <label for="comments">Comments & questions</label>
+                    <textarea name="comments" rows="7" cols="60" placeholder="What can we do for you? Give it to us straight. The more details the better!"></textarea>
 
-                    <input type="reset" value="Clear form">
-                    <button id="submit">Submit</button>
+                    <div id="formButtons">
+                        <input type="reset" value="Clear form" id="clearForm">
+                        <button id="submit">Submit</button>
+                    </div>
                 </form>
                 <button id="backToTop"><a href="#">Back to top<img src="Icons/upArrow.svg"></a></button>
             </section>
