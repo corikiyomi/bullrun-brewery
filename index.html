@@ -3,21 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=1280px, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap">
+    
     <title>Bullrun Brewery</title>
 </head>
+
 <body>
     <header>
         <img src="Icons/lightModePink.svg" alt="Bullrun Brewery primary logo">
         <nav>
             <ul>
-                <li href="#">Home</li>
-                <li href="#about">About Us</li>
-                <li href="#shop">Shop</li>
-                <li href="#contact">Contact</li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#products">Shop</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-            <img src="/Icons/sun.svg" alt="light mode icon">
         </nav>
+        <!-- Toggle switch between Light and Dark mode -->
+        <button id="lightDarkMode">
+            <img src="/Icons/sun.svg" alt="light mode icon">
+        </button>
     </header>
 
     <main>
@@ -55,7 +64,7 @@
             <source src="Videos/cheers.mp4" type="video/mp4">
         </video>
     
-        <section id="contact-us">
+        <section id="contact">
             <h2>Contact Us</h2>
             <p>Have a question or want to leave us a comment? Interested in working with us for an event or want to work for <span class="bullrunBrewery"> Bullrun Brewery</span>?</p>
             <p>Fill out the form below! We would love to talk you more about it. We'll get back to you within 48 hours. Promise!</p>
@@ -81,6 +90,7 @@
                 <input type="reset" value="Clear form">
                 <button id="submit">Submit</button>
             </form>
+            <button id="backToTop"><a href="#">Back to top<img src="Icons/upArrow.svg"></a></button>
         </section>
     </main>
     <footer>
