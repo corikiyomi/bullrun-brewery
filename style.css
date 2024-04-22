@@ -226,7 +226,7 @@ h1 {
 
 .item {
     width: 400px;
-    padding: 5px;
+    padding-right: 15px;
     display: flex;
     flex-direction: column;
 }
@@ -264,7 +264,7 @@ h1 {
 }
 
 .sizes {
-    padding-left: 10px;
+    padding-left: 7px;
     margin: 5px;
 }
 
@@ -285,7 +285,6 @@ h1 {
     cursor: pointer;
 }
 
-
 .addToCart {
     background-color: #01B09B;
     padding: 15px 10px;
@@ -297,6 +296,7 @@ h1 {
     left: 260px;
     bottom: 45px;
 }
+
 
 
 #cheersVideo {
