@@ -176,7 +176,7 @@ h1 {
     text-align: justify;
 }
 
-.bullrunBrewery {
+.bullrun-brewery {
     font-family: "Orbitron";
     font-weight: 800;
     text-transform: uppercase;
@@ -320,7 +320,7 @@ h1 {
     padding: 7.5px 4.5px;
 }
 
-.addToCart {
+.add-to-cart {
     background-color: #01B09B;
     padding: 15px 10px;
     color: #F0F0F0;
@@ -334,15 +334,15 @@ h1 {
     cursor: pointer;
 }
 
-.addToCart:hover {
+.add-to-cart:hover {
     background-color: rgb(0, 141, 127);
 }
 
-.addToCart:active {
+.add-to-cart:active {
     box-shadow: inset 3px 3px rgb(0, 60, 54, 20%)
 }
 
-#drinkware .addToCart, #accessories .addToCart {
+#drinkware .add-to-cart, #accessories .add-to-cart {
     position: relative;
     top: 25px;
 }
@@ -510,35 +510,35 @@ footer {
     padding: 30px 75px;
 }
 
-.socialMediaIcons {
+.social-media-icons {
     justify-self: flex-end;
     display: flex;
     flex-direction: row;
 }
 
-.socialMediaIcons li {
+.social-media-icons li {
     list-style: none;
 }
 
-.socialMediaIcons img {
+.social-media-icons img {
     height: 40px;
     width: fit-content; 
     padding: 15px;
 }
 
-ul.footerNav {
+ul.footer-nav {
     display: flex;
     flex-direction: row;
     justify-items: space-between;
     margin-top: 35px;
 }
 
-ul.footerNav li {
+ul.footer-nav li {
     list-style: none;
     padding: 10px 15px;
 }
 
-ul.footerNav li a {
+ul.footer-nav li a {
     color: #F0F0F0;
     text-decoration: none;
     font-size: 1rem;
