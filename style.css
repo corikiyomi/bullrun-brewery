@@ -268,21 +268,56 @@ h1 {
     margin: 5px;
 }
 
-.sizes > button {
-    border: 1.5px solid #FF004C;
-    background-color: #F0F0F0;
-    color: #FF004C;
-    font-family: "PolySans";
-    padding: 5px;
-    width: 35px;
-    height: 35px;
-    justify-content: center;
-    border-radius: 20px;
+.size-checkbox {
+    display: none;
 }
 
-.sizes > button:hover {
-    border: 2.5px solid #FF004C;
+.size-label {
+    display: inline-block;
+    margin: 0;
+    padding: 6px 11px;
+    border: 1.5px solid #FF004C;
+    color: #FF004C;
+    border-radius: 20px;
+    background-color: #F0F0F0;
     cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.size-label:hover {
+    border: 2.5px solid #FF004C;
+    padding: 5px 10px;
+}
+
+.size-checkbox:checked + .size-label {
+    background-color: #FF004C;
+    color: #f0f0f0;
+    border-color: #FF004C;
+}
+
+.size-label:nth-of-type(2) {
+    padding: 6px 9px;
+}
+
+.size-label:nth-of-type(2):hover {
+    padding: 5px 8px;
+}
+
+.size-label:nth-of-type(4) {
+    padding: 6.5px 6.5px;
+}
+
+.size-label:nth-of-type(4):hover {
+    padding: 5.5px 5.5px;
+}
+
+.size-label:nth-of-type(5) {
+    font-size: .9rem;
+    padding: 8.5px 5.5px;
+}
+
+.size-label:nth-of-type(5):hover {
+    padding: 7.5px 4.5px;
 }
 
 .addToCart {
@@ -295,6 +330,16 @@ h1 {
     position: relative;
     left: 260px;
     bottom: 45px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+}
+
+.addToCart:hover {
+    background-color: rgb(0, 141, 127);
+}
+
+.addToCart:active {
+    box-shadow: inset 3px 3px rgb(0, 60, 54, 20%)
 }
 
 #drinkware .addToCart, #accessories .addToCart {
@@ -389,6 +434,17 @@ h1 {
     width: 200px;
     background-color: #9D9D9D;
     margin-right: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#clearForm:hover {
+    background-color: #585858;
+}
+
+#clearForm:active {
+    box-shadow: inset 3px 3px rgba(28, 28, 28, 0.2)
+
 }
 
 #submit {
@@ -398,6 +454,16 @@ h1 {
     color: #F0F0F0;
     padding: 15px;
     width: 200px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#submit:hover {
+    background-color: rgb(0, 141, 127);
+}
+
+#submit.active {
+    box-shadow: inset 3px 3px rgb(0, 60, 54, 20%)
 }
 
 /**************** BACK TO TOP BUTTON ***************/
