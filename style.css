@@ -17,6 +17,9 @@ body {
     color: #F0F0F0;
 }
 
+
+/**************** HEADER ******************/
+
 header {
     padding: 40px 75px 10px 75px;
     display: flex;
@@ -27,7 +30,6 @@ header img, footer img {
     width: 399px;
     height: 123px;
 }
-
 
 
 /******************* NAV ********************/
@@ -56,6 +58,10 @@ nav a {
     color: #1A1A1A;
 }
 
+a.nav-link.nav-dark-mode {
+    color: #F0F0F0;
+}
+
 nav ul li a {
     text-decoration: none;
 }
@@ -71,49 +77,6 @@ nav ul li a:visited {
 
 
 /******** LIGHT/DARK MODE TOGGLE SWITCH *********/
-
-/* #lightDarkMode {
-    width: 35px;
-    height: 35px;
-    border-radius: 20px;
-    display: flex;
-    margin-top: 8px;
-    padding: 0;
-    align-items: center;
-    justify-content: center;
-    background-color: #1A1A1A;
-}
-
-.color-white {
-    background-color: #F0F0F0;
-}
-
-#lightDarkMode img {
-    position: relative;
-    width: 20px;
-    height: 20px;
-}
-
-#lightDarkMode .hidden {
-    visibility: hidden;
-}
-
-#lightDarkMode:hover {
-    cursor: pointer;
-}
-
-#moon {
-    position: relative;
-    margin-right: 18px;
-    margin-bottom: 1px;
-}
-
-#sun {
-    position: relative;
-    left: 19px;
-} */
-
-/* Use checkbox for light/dark mode toggle */
 
 .switchMode {
     display: none;

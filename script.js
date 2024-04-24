@@ -1,22 +1,38 @@
 "use strict";
 
-
-// LIGHT MODE DARK MODE SWITCH
-
+// LIGHT MODE - DARK MODE SWITCH
 let moonIcon = document.getElementById("moon");
 let sunIcon = document.getElementById("sun");
-let mainLogo = document.querySelector("header>img");
+let mainLogo = document.getElementById("lightModeLogo");
+let secLogo = document.getElementById("darkModeLogo");
 let lightDarkModeButton = document.getElementById("lightDarkMode");
 
 // If in light mode (default) and the button is clicked, change the background color, text color to #1A1A1A and #F0F0F0 respectively.
 function changeMode() {
     let body = document.body;
     body.classList.toggle("dark-mode");
-
+    // Mode Button Styling
     sunIcon.classList.toggle("hidden");
+    // Header
+    mainLogo.classList.toggle("hidden");
+    secLogo.classList.toggle("hidden");
+    // Navigation Link Color
+    // get nav links
+    let navLinks = document.querySelectorAll("nav a");
+    console.log(navLinks);
+    // loop through links to change color
+    for (let i = 0; i < navLinks.length; i++) {
+        navLinks[i].classList.toggle("nav-dark-mode");
+    }
 
-    // Nav
-    
+    // Shop h2 Background Color
+
+
+    // Shop size link background color
+
+
+    // Footer background color
+
 }
 
 
