@@ -1,18 +1,22 @@
 "use strict";
 
-// AGE RESTRICTION
-
-// Browser on page load to verify age because of content.
-
-
-
 
 // LIGHT MODE DARK MODE SWITCH
 
+let moonIcon = document.getElementById("moon");
+let sunIcon = document.getElementById("sun");
+let mainLogo = document.querySelector("header>img");
+let lightDarkModeButton = document.getElementById("lightDarkMode");
+
 // If in light mode (default) and the button is clicked, change the background color, text color to #1A1A1A and #F0F0F0 respectively.
+function changeMode() {
+    let body = document.body;
+    body.classList.toggle("dark-mode");
+    sunIcon.classList.toggle("hidden");
+    moonIcon.classList.toggle("hidden");
+    lightDarkModeButton.classList.toggle("color-white");
 
-
-
+}
 
 
 // NAVIGATION
@@ -67,3 +71,13 @@
 // If there are items in the shopping cart, return to Products section. 
 
 // If the shopping cart is empty, reload the page.
+
+
+
+
+
+
+
+
+// EVENT LISTENERS
+document.getElementById("lightDarkMode").addEventListener("click", changeMode);

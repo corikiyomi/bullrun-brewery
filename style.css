@@ -12,6 +12,11 @@ body {
     background-color: #F0F0F0;
 }
 
+.dark-mode {
+    background-color: #1A1A1A;
+    color: #F0F0F0;
+}
+
 header {
     padding: 40px 75px 10px 75px;
     display: flex;
@@ -79,6 +84,10 @@ nav ul li a:visited {
     background-color: #1A1A1A;
 }
 
+.color-white {
+    background-color: #F0F0F0;
+}
+
 #lightDarkMode img {
     position: relative;
     width: 20px;
@@ -97,6 +106,11 @@ nav ul li a:visited {
     position: relative;
     margin-right: 18px;
     margin-bottom: 1px;
+}
+
+#sun {
+    position: relative;
+    left: 19px;
 }
 
 
