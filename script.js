@@ -12,10 +12,11 @@ let lightDarkModeButton = document.getElementById("lightDarkMode");
 function changeMode() {
     let body = document.body;
     body.classList.toggle("dark-mode");
-    sunIcon.classList.toggle("hidden");
-    moonIcon.classList.toggle("hidden");
-    lightDarkModeButton.classList.toggle("color-white");
 
+    sunIcon.classList.toggle("hidden");
+
+    // Nav
+    
 }
 
 
@@ -80,4 +81,6 @@ function changeMode() {
 
 
 // EVENT LISTENERS
+// document.getElementById("lightDarkMode").addEventListener("click", changeMode);
+
 document.getElementById("lightDarkMode").addEventListener("click", changeMode);

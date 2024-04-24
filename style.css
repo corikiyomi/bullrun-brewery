@@ -119,13 +119,14 @@ nav ul li a:visited {
     display: none;
 }
 
-.switchModeIcon {
+#switchModeIcon {
     height: 50px;
     border-radius: 50px;
     background-color: #1A1A1A;
+    z-index: 0;
 }
 
-.switchModeIcon img {
+#switchModeIcon img {
     width: 30px;
     height: 30px;
     padding: 10px;
@@ -133,14 +134,29 @@ nav ul li a:visited {
     cursor: pointer;
 }
 
-.switchModeIcon img:hover {
+.hidden {
+    display: none;
+}
+
+#switchModeIcon img:first-of-type {
+    z-index: 2;
+}
+
+#switchModeIcon img:last-of-type {
+    z-index: 1;
+    position: absolute;
+    right: 75px;
+}
+
+#switchModeIcon img:hover {
     border: 2px solid gray;
     padding: 8px;
 }
 
-#lightDarkMode:checked + .switchModeIcon {
+#lightDarkMode:checked + #switchModeIcon {
     background-color: #F0F0F0;
 }
+
 
 /****** HEADER *******/
 
