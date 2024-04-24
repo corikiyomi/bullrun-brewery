@@ -18,7 +18,7 @@ header {
     justify-content: space-between;
 }
 
-header img {
+header img, footer img {
     width: 399px;
     height: 123px;
 }
@@ -152,7 +152,7 @@ h1 {
     height: 923px;
 }
 
-#about-description {
+#aboutDescription {
     padding: 150px 125px 0 125px;
 }
 
@@ -176,7 +176,7 @@ h1 {
     text-align: justify;
 }
 
-.bullrunBrewery {
+.bullrun-brewery {
     font-family: "Orbitron";
     font-weight: 800;
     text-transform: uppercase;
@@ -268,24 +268,59 @@ h1 {
     margin: 5px;
 }
 
-.sizes > button {
+.size-checkbox {
+    display: none;
+}
+
+.size-label {
+    display: inline-block;
+    margin: 0;
+    padding: 6px 11px;
     border: 1.5px solid #FF004C;
-    background-color: #F0F0F0;
     color: #FF004C;
-    font-family: "PolySans";
-    padding: 5px;
-    width: 35px;
-    height: 35px;
-    justify-content: center;
     border-radius: 20px;
-}
-
-.sizes > button:hover {
-    border: 2.5px solid #FF004C;
+    background-color: #F0F0F0;
     cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.addToCart {
+.size-label:hover {
+    border: 2.5px solid #FF004C;
+    padding: 5px 10px;
+}
+
+.size-checkbox:checked + .size-label {
+    background-color: #FF004C;
+    color: #f0f0f0;
+    border-color: #FF004C;
+}
+
+.size-label:nth-of-type(2) {
+    padding: 6px 9px;
+}
+
+.size-label:nth-of-type(2):hover {
+    padding: 5px 8px;
+}
+
+.size-label:nth-of-type(4) {
+    padding: 6.5px 6.5px;
+}
+
+.size-label:nth-of-type(4):hover {
+    padding: 5.5px 5.5px;
+}
+
+.size-label:nth-of-type(5) {
+    font-size: .9rem;
+    padding: 8.5px 5.5px;
+}
+
+.size-label:nth-of-type(5):hover {
+    padding: 7.5px 4.5px;
+}
+
+.add-to-cart {
     background-color: #01B09B;
     padding: 15px 10px;
     color: #F0F0F0;
@@ -295,11 +330,26 @@ h1 {
     position: relative;
     left: 260px;
     bottom: 45px;
+    transition: background-color 0.3s;
+    cursor: pointer;
 }
 
-#drinkware .addToCart, #accessories .addToCart {
+.add-to-cart:hover {
+    background-color: rgb(0, 141, 127);
+}
+
+.add-to-cart:active {
+    box-shadow: inset 3px 3px rgb(0, 60, 54, 20%)
+}
+
+#drinkware .add-to-cart, #accessories .add-to-cart {
     position: relative;
     top: 25px;
+}
+
+#drinkware p:last-of-type {
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 #accessories {
@@ -389,6 +439,17 @@ h1 {
     width: 200px;
     background-color: #9D9D9D;
     margin-right: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#clearForm:hover {
+    background-color: #585858;
+}
+
+#clearForm:active {
+    box-shadow: inset 3px 3px rgba(28, 28, 28, 0.2)
+
 }
 
 #submit {
@@ -398,9 +459,107 @@ h1 {
     color: #F0F0F0;
     padding: 15px;
     width: 200px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#submit:hover {
+    background-color: rgb(0, 141, 127);
+}
+
+#submit.active {
+    box-shadow: inset 3px 3px rgb(0, 60, 54, 20%)
 }
 
 /**************** BACK TO TOP BUTTON ***************/
-#backToTop {
+button#backToTop {
+    position: fixed;
+    bottom: 50px;
+    right: 20px;
     z-index: 2;
+    background-color: rgba(28, 28, 28, 0.2);
+    border: none;
+    padding: 15px 15px 15px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    width: 150px;
+    transition: background-color 0.3s;
+    cursor: pointer;
+
+    color: #FFFFFF;
+    font-family: "PolySans";
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+button#backToTop:hover {
+    background-color: rgba(28, 28, 28, 0.5);
+}
+
+button#backToTop img {
+    position: relative;
+    top: 2px;
+    left: 10px;
+}
+
+
+/************************ FOOTER *******************/
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background-color: #1A1A1A;
+    height: 180px;
+    padding: 30px 75px;
+}
+
+.social-media-icons {
+    justify-self: flex-end;
+    display: flex;
+    flex-direction: row;
+}
+
+.social-media-icons li {
+    list-style: none;
+}
+
+.social-media-icons img {
+    height: 40px;
+    width: fit-content; 
+    padding: 15px;
+}
+
+ul.footer-nav {
+    display: flex;
+    flex-direction: row;
+    justify-items: space-between;
+    margin-top: 35px;
+}
+
+ul.footer-nav li {
+    list-style: none;
+    padding: 10px 15px;
+}
+
+ul.footer-nav li a {
+    color: #F0F0F0;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+div#copyright {
+    display: flex;
+    width: 1280px;
+    margin-left: 115px;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    color: #f0f0f0;
+}
+
+div#copyright p {
+    padding: 10px;
 }
