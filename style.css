@@ -72,7 +72,7 @@ nav ul li a:visited {
 
 /******** LIGHT/DARK MODE TOGGLE SWITCH *********/
 
-#lightDarkMode {
+/* #lightDarkMode {
     width: 35px;
     height: 35px;
     border-radius: 20px;
@@ -111,8 +111,36 @@ nav ul li a:visited {
 #sun {
     position: relative;
     left: 19px;
+} */
+
+/* Use checkbox for light/dark mode toggle */
+
+.switchMode {
+    display: none;
 }
 
+.switchModeIcon {
+    height: 50px;
+    border-radius: 50px;
+    background-color: #1A1A1A;
+}
+
+.switchModeIcon img {
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.switchModeIcon img:hover {
+    border: 2px solid gray;
+    padding: 8px;
+}
+
+#lightDarkMode:checked + .switchModeIcon {
+    background-color: #F0F0F0;
+}
 
 /****** HEADER *******/
 
