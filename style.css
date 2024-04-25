@@ -421,7 +421,6 @@ h1 {
 #shoppingCart {
     grid-column: 4 / 6;
     grid-row-start: 2;
-    /* grid-row-end: 11; */
     padding: 0px 30px 0px 10px;
     height: 1fr;
     float: right;
@@ -465,13 +464,29 @@ div.item p {
     padding-bottom: 10px;
 }
 
-.items-added {
+.items-added, .price {
     justify-self: flex-start;
     align-items: left;
 }
 
 .items-added.item-price {
     justify-self: flex-end;
+}
+
+div.price, div.price.taxes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+}
+
+span.small {
+    font-size: 0.75rem;
+    font-style: italic;
+}
+
+p#subtotal, p#taxes, p#total {
+    margin-right: 10px;
 }
 
 div.cart-buttons {

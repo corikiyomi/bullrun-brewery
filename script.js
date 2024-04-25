@@ -304,7 +304,12 @@ function clearCart() {
     shoppingCart = [];
 }
 
+// COST CALCULATOR
+
 // Adjust subtotal, taxes, and total cost on click
+let subtotal;
+
+
 
 // if shopping cart has items, create a
 
