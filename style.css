@@ -3,6 +3,10 @@
     src: url("/Font/PolySans.ttf");
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     width: 1280px;
     margin: 0 auto;
@@ -160,7 +164,6 @@ h1 {
 
 
 
-
 /************** ABOUT SECTION *****************/
 
 #about {
@@ -228,6 +231,10 @@ h1 {
     background-image: linear-gradient(#FF004C, #F0F0F0);
     grid-column: 1 / 6;
     height: 100px;
+}
+
+#products h2.dark-bg {
+    background-image: linear-gradient(#1a1a1a, #1a1a1a);
 }
 
 .product-type {
@@ -303,6 +310,12 @@ h1 {
     background-color: #F0F0F0;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
+}
+
+.dark-bg-button {
+    color: #F0F0F0;
+    border: 1.5px solid #F0F0F0;
+    background-color: #1A1A1A;
 }
 
 .size-label:hover {
@@ -546,6 +559,7 @@ button#backToTop img {
     top: 2px;
     left: 10px;
 }
+
 
 
 /************************ FOOTER *******************/

@@ -6,6 +6,8 @@ let sunIcon = document.getElementById("sun");
 let mainLogo = document.getElementById("lightModeLogo");
 let secLogo = document.getElementById("darkModeLogo");
 let lightDarkModeButton = document.getElementById("lightDarkMode");
+let productHeader = document.querySelector("#products > h2");
+let sizeButtons = document.querySelectorAll("label.size-label");
 
 // If in light mode (default) and the button is clicked, change the background color, text color to #1A1A1A and #F0F0F0 respectively.
 function changeMode() {
@@ -24,31 +26,19 @@ function changeMode() {
     for (let i = 0; i < navLinks.length; i++) {
         navLinks[i].classList.toggle("nav-dark-mode");
     }
-
     // Shop h2 Background Color
-
-
+    productHeader.classList.toggle("dark-bg");
     // Shop size link background color
-
-
-    // Footer background color
-
+    for (let i = 0; i < sizeButtons.length; i++) {
+        sizeButtons[i].classList.toggle("dark-bg-button");
+    }
 }
 
 
-// NAVIGATION
-
-// When nav tabs are clicked, instead of page jump to location, have the page scroll and gently stop
-
-
-
-
 // BACK TO TOP BUTTON
+let btnBackToTop = document.getElementById("backToTop");
 
 // Display: none when hero section is visible
-
-// When clicked, the page should scroll and gently stop at the top of the page
-
 
 
 
