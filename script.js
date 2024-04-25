@@ -98,36 +98,28 @@ let whiteShirt = document.querySelectorAll("#apparel2 input.size-checkbox");
 selected = [];
 
 function addWhiteShirtToCart() {
-    // When Add to Cart button is pressed, the for loop will check for items that are checked and add them to the list 'selected'
     for (let i = 0; i < whiteShirt.length; i++) {
         if (whiteShirt[i].checked) {
             selected.push(whiteShirt[i]);
         }
     }
-    // Once items have been added to selected list, items are looped over to output the item, size and price to shopping cart
     for (let myItem of selected) {
         document.getElementById("empty").classList.add("not-empty");
-        // Item Name, Size
         let p = document.createElement("p");
         let itemDescription = document.createTextNode(`Classic Tee — White / Pink , ${myItem.classList.item(1)}`);
         p.appendChild(itemDescription);
-        // Append Item Price
         let itemPrice = document.createElement("p");
         let price = document.createTextNode("$ 22");
         itemPrice.appendChild(price);
-        // Create newItem div and append both paragraphs
         let newItem = document.createElement("div");
         newItem.classList.add("item");
         newItem.appendChild(p);
         newItem.appendChild(itemPrice);
         document.getElementById("itemsAdded").appendChild(newItem);
         console.log(newItem);
-        // Add self to shoppingCart list for cost calculation
         shoppingCart.push(myItem);
-        // Uncheck item
         myItem.checked = false;
     }
-    // clear selection; reset buttons
     while (selected.length > 0) {
         selected.pop();
     }
@@ -138,75 +130,60 @@ let blackHoodie = document.querySelectorAll("#apparel3 input.size-checkbox");
 selected = [];
 
 function addBlackHoodieToCart() {
-    // When Add to Cart button is pressed, the for loop will check for items that are checked and add them to the list 'selected'
     for (let i = 0; i < blackHoodie.length; i++) {
         if (blackHoodie[i].checked) {
             selected.push(blackHoodie[i]);
         }
     }
-    // Once items have been added to selected list, items are looped over to output the item, size and price to shopping cart
     for (let myItem of selected) {
         document.getElementById("empty").classList.add("not-empty");
-        // Item Name, Size
         let p = document.createElement("p");
         let itemDescription = document.createTextNode(`Bullrun Hoodie — Black, ${myItem.classList.item(1)}`);
         p.appendChild(itemDescription);
-        // Append Item Price
         let itemPrice = document.createElement("p");
         let price = document.createTextNode("$ 35");
         itemPrice.appendChild(price);
-        // Create newItem div and append both paragraphs
         let newItem = document.createElement("div");
         newItem.classList.add("item");
         newItem.appendChild(p);
         newItem.appendChild(itemPrice);
         document.getElementById("itemsAdded").appendChild(newItem);
         console.log(newItem);
-        // Add self to shoppingCart list for cost calculation
         shoppingCart.push(myItem);
-        // Uncheck item
         myItem.checked = false;
     }
-    // clear selection; reset buttons
     while (selected.length > 0) {
         selected.pop();
     }
 }
+
 // Bullrun Hoodie - White
 let whiteHoodie = document.querySelectorAll("#apparel4 input.size-checkbox");
 selected = [];
 
 function addWhiteHoodieToCart() {
-    // When Add to Cart button is pressed, the for loop will check for items that are checked and add them to the list 'selected'
     for (let i = 0; i < whiteHoodie.length; i++) {
         if (whiteHoodie[i].checked) {
             selected.push(whiteHoodie[i]);
         }
     }
-    // Once items have been added to selected list, items are looped over to output the item, size and price to shopping cart
     for (let myItem of selected) {
         document.getElementById("empty").classList.add("not-empty");
-        // Item Name, Size
         let p = document.createElement("p");
         let itemDescription = document.createTextNode(`Bullrun Hoodie — White, ${myItem.classList.item(1)}`);
         p.appendChild(itemDescription);
-        // Append Item Price
         let itemPrice = document.createElement("p");
         let price = document.createTextNode("$ 35");
         itemPrice.appendChild(price);
-        // Create newItem div and append both paragraphs
         let newItem = document.createElement("div");
         newItem.classList.add("item");
         newItem.appendChild(p);
         newItem.appendChild(itemPrice);
         document.getElementById("itemsAdded").appendChild(newItem);
         console.log(newItem);
-        // Add self to shoppingCart list for cost calculation
         shoppingCart.push(myItem);
-        // Uncheck item
         myItem.checked = false;
     }
-    // clear selection; reset buttons
     while (selected.length > 0) {
         selected.pop();
     }
@@ -221,6 +198,7 @@ function clearCart() {
     let cartMessage = document.createTextNode("Your cart is empty.");
     p.appendChild(cartMessage);
     document.getElementById("itemsAdded").appendChild(p);
+    shoppingCart = [];
 }
 
 // Adjust subtotal, taxes, and total cost on click
