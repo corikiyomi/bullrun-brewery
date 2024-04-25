@@ -497,6 +497,10 @@ button#cartSubmit {
     background-color: #ff004c;
 }
 
+div.item.not-empty {
+    display: none;
+}
+
 
 /******* CONTACT FORM **********/
 

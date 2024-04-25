@@ -58,9 +58,8 @@
                     <hr>
                     <div id="itemsAdded" class="items-added">
                         <!-- Uses js to add items to cart -->
-                        <div class="item"> 
-                            <p>Example Item 1</p>
-                            <p class="item-price">$ 22</p>
+                        <div class="item" id="empty"> 
+                            <p>Your cart is empty.</p>
                         </div>  
                     </div>
                     <hr>
@@ -94,15 +93,15 @@
                         <p class="price">$ 22</p>
                         <p>The original <span class="bullrun-brewery">Bullrun Brewery</span> t-shirt feels like an old favorite.</p>
                         <div class="sizes">
-                            <input type="checkbox" id="a1sizeS" class="size-checkbox" name="size" value="S">
+                            <input type="checkbox" id="a1sizeS" class="size-checkbox S" name="size" value="S">
                             <label for="a1sizeS" class="size-label">S</label>
-                            <input type="checkbox" id="a1sizeM" class="size-checkbox" name="size" value="M">
+                            <input type="checkbox" id="a1sizeM" class="size-checkbox M" name="size" value="M">
                             <label for="a1sizeM" class="size-label">M</label>
-                            <input type="checkbox" id="a1sizeL" class="size-checkbox" name="size" value="L">
+                            <input type="checkbox" id="a1sizeL" class="size-checkbox L" name="size" value="L">
                             <label for="a1sizeL" class="size-label">L</label>
-                            <input type="checkbox" id="a1sizeXL" class="size-checkbox" name="size" value="XL">
+                            <input type="checkbox" id="a1sizeXL" class="size-checkbox XL" name="size" value="XL">
                             <label for="a1sizeXL" class="size-label">XL</label>
-                            <input type="checkbox" id="a1size2XL" class="size-checkbox" name="size" value="2XL">
+                            <input type="checkbox" id="a1size2XL" class="size-checkbox 2XL" name="size" value="2XL">
                             <label for="a1size2XL" class="size-label">2XL</label>
                         </div>
                         <button type="button" class="add-to-cart" id="addShirtBlack">Add to cart</button>
@@ -113,15 +112,15 @@
                         <p class="price">$ 22</p>
                         <p>The original <span class="bullrun-brewery">Bullrun Brewery</span> t-shirt feels like an old favorite.</p>
                         <div class="sizes">
-                            <input type="checkbox" id="a2sizeS" class="size-checkbox" name="size" value="S">
+                            <input type="checkbox" id="a2sizeS" class="size-checkbox S" name="size" value="S">
                             <label for="a2sizeS" class="size-label">S</label>
-                            <input type="checkbox" id="a2sizeM" class="size-checkbox" name="size" value="M">
+                            <input type="checkbox" id="a2sizeM" class="size-checkbox M" name="size" value="M">
                             <label for="a2sizeM" class="size-label">M</label>
-                            <input type="checkbox" id="a2sizeL" class="size-checkbox" name="size" value="L">
+                            <input type="checkbox" id="a2sizeL" class="size-checkbox L" name="size" value="L">
                             <label for="a2sizeL" class="size-label">L</label>
-                            <input type="checkbox" id="a2sizeXL" class="size-checkbox" name="size" value="XL">
+                            <input type="checkbox" id="a2sizeXL" class="size-checkbox XL" name="size" value="XL">
                             <label for="a2sizeXL" class="size-label">XL</label>
-                            <input type="checkbox" id="a2size2XL" class="size-checkbox" name="size" value="2XL">
+                            <input type="checkbox" id="a2size2XL" class="size-checkbox 2XL" name="size" value="2XL">
                             <label for="a2size2XL" class="size-label">2XL</label>
                         </div>
                         <button type="button" class="add-to-cart" id="addShirtWhite">Add to cart</button>
@@ -132,15 +131,15 @@
                         <p class="price">$ 35</p>
                         <p>The essential hoodie. Our reliable fit and soft-to-the-touch tech fleece combo can't be beat.</p>
                         <div class="sizes">
-                            <input type="checkbox" id="a3sizeS" class="size-checkbox" name="size" value="S">
+                            <input type="checkbox" id="a3sizeS" class="size-checkbox S" name="size" value="S">
                             <label for="a3sizeS" class="size-label">S</label>
-                            <input type="checkbox" id="a3sizeM" class="size-checkbox" name="size" value="M">
+                            <input type="checkbox" id="a3sizeM" class="size-checkbox M" name="size" value="M">
                             <label for="a3sizeM" class="size-label">M</label>
-                            <input type="checkbox" id="a3sizeL" class="size-checkbox" name="size" value="L">
+                            <input type="checkbox" id="a3sizeL" class="size-checkbox L" name="size" value="L">
                             <label for="a3sizeL" class="size-label">L</label>
-                            <input type="checkbox" id="a3sizeXL" class="size-checkbox" name="size" value="XL">
+                            <input type="checkbox" id="a3sizeXL" class="size-checkbox XL" name="size" value="XL">
                             <label for="a3sizeXL" class="size-label">XL</label>
-                            <input type="checkbox" id="a3size2XL" class="size-checkbox" name="size" value="2XL">
+                            <input type="checkbox" id="a3size2XL" class="size-checkbox 2XL" name="size" value="2XL">
                             <label for="a3size2XL" class="size-label">2XL</label>
                         </div>
                         <button type="button" class="add-to-cart" id="addHoodieBlack">Add to cart</button>
@@ -151,15 +150,15 @@
                         <p class="price">$ 35</p>
                         <p>The essential hoodie. Our reliable fit and soft-to-the-touch tech fleece combo can't be beat.</p>
                         <div class="sizes">
-                            <input type="checkbox" id="a4sizeS" class="size-checkbox" name="size" value="S">
+                            <input type="checkbox" id="a4sizeS" class="size-checkbox S" name="size" value="S">
                             <label for="a4sizeS" class="size-label">S</label>
-                            <input type="checkbox" id="a4sizeM" class="size-checkbox" name="size" value="M">
+                            <input type="checkbox" id="a4sizeM" class="size-checkbox M" name="size" value="M">
                             <label for="a4sizeM" class="size-label">M</label>
-                            <input type="checkbox" id="a4sizeL" class="size-checkbox" name="size" value="L">
+                            <input type="checkbox" id="a4sizeL" class="size-checkbox L" name="size" value="L">
                             <label for="a4sizeL" class="size-label">L</label>
-                            <input type="checkbox" id="a4sizeXL" class="size-checkbox disabled" name="size" value="XL">
+                            <input type="checkbox" id="a4sizeXL" class="size-checkbox XL" name="size" value="XL">
                             <label for="a4sizeXL" class="size-label">XL</label>
-                            <input type="checkbox" id="a4size2XL" class="size-checkbox" name="size" value="2XL">
+                            <input type="checkbox" id="a4size2XL" class="size-checkbox 2XL" name="size" value="2XL">
                             <label for="a4size2XL" class="size-label">2XL</label>
                         </div>
                         <button type="button" class="add-to-cart" id="addHoodieWhite">Add to cart</button>
