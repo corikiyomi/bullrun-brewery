@@ -210,6 +210,9 @@ h1 {
 
 /************* PRODUCT DISPLAY SECTION **************/
 
+
+/*************** PRODUCTS ****************/
+
 #products {
     display: grid;
     width: 100vw;
@@ -407,19 +410,21 @@ h1 {
     object-fit: cover;
 }
 
-
 /************ SHOPPING CART *************/
 
 #shoppingCart {
     grid-column: 4 / 6;
     grid-row-start: 2;
-    padding: 0px 30px 50px 10px;
+    /* grid-row-end: 11; */
+    padding: 0px 30px 0px 10px;
+    height: 1fr;
     float: right;
     margin-left: 30px;
     display: flex;
     flex-direction: column;
     position: sticky;
     top: 0;
+    height: 100vh;
 }
 
 #shoppingCart p {
@@ -462,7 +467,6 @@ div.item p {
 .items-added.item-price {
     justify-self: flex-end;
 }
-
 
 
 /******* CONTACT FORM **********/
