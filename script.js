@@ -1,5 +1,6 @@
 "use strict";
 
+
 // LIGHT MODE - DARK MODE SWITCH
 let moonIcon = document.getElementById("moon");
 let sunIcon = document.getElementById("sun");
@@ -39,10 +40,14 @@ function changeMode() {
 let btnBackToTop = document.getElementById("backToTop");
 
 // Display: none when hero section is visible
+window.addEventListener("scroll", e => {
+    btnBackToTop.style.display = window.scrollY > 900 ? 'block' : 'none';
+})
 
 
 
 // PRODUCTS
+
 
 // When size is selected and Add to Cart button is clicked, add quantity 1 for each size selected to the cart / cost calculator with the corresponding price.
 // Adjust subtotal, taxes, and total cost on click
