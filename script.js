@@ -46,13 +46,12 @@ window.addEventListener("scroll", e => {
 
 
 // PRODUCTS
-let shoppingCart = [];
-let selected = [];
+let shoppingCart = []; // all items in cart
+let selected = []; // specific to each item
 
 // When size is selected and Add to Cart button is clicked, add quantity 1 for each size selected to the cart / cost calculator with the corresponding price.
 
-// Add all checked items to list ready to be added to cart
-
+// APPAREL
 // Classic Tee - Black / Pink
 let blackShirt = document.querySelectorAll("#apparel1 input.size-checkbox");
 selected = [];
@@ -189,7 +188,111 @@ function addWhiteHoodieToCart() {
     }
 }
 
-console.log(shoppingCart); 
+// DRINKWARE
+let pint = document.getElementById("drinkware1");
+let tulip = document.getElementById("drinkware2");
+let growler = document.getElementById("drinkware3");
+// Pint
+function addPintToCart() {
+    document.getElementById("empty").classList.add("not-empty");
+    let p = document.createElement("p");
+    let itemDescription = document.createTextNode("Bullrun Brewery Pint");
+    p.appendChild(itemDescription);
+    let itemPrice = document.createElement("p");
+    let price = document.createTextNode("$ 14");
+    itemPrice.appendChild(price);
+    let newItem = document.createElement("div");
+    newItem.classList.add("item");
+    newItem.appendChild(p);
+    newItem.appendChild(itemPrice);
+    document.getElementById("itemsAdded").appendChild(newItem);
+    shoppingCart.push(pint);
+}
+// Tulip
+function addTulipToCart() {
+    document.getElementById("empty").classList.add("not-empty");
+    let p = document.createElement("p");
+    let itemDescription = document.createTextNode("Logo Tulip Glass");
+    p.appendChild(itemDescription);
+    let itemPrice = document.createElement("p");
+    let price = document.createTextNode("$ 12");
+    itemPrice.appendChild(price);
+    let newItem = document.createElement("div");
+    newItem.classList.add("item");
+    newItem.appendChild(p);
+    newItem.appendChild(itemPrice);
+    document.getElementById("itemsAdded").appendChild(newItem);
+    shoppingCart.push(tulip);
+}
+// Growler
+function addGrowlerToCart() {
+    document.getElementById("empty").classList.add("not-empty");
+    let p = document.createElement("p");
+    let itemDescription = document.createTextNode("64oz. Growler — Amber");
+    p.appendChild(itemDescription);
+    let itemPrice = document.createElement("p");
+    let price = document.createTextNode("$ 35");
+    itemPrice.appendChild(price);
+    let newItem = document.createElement("div");
+    newItem.classList.add("item");
+    newItem.appendChild(p);
+    newItem.appendChild(itemPrice);
+    document.getElementById("itemsAdded").appendChild(newItem);
+    shoppingCart.push(growler);
+}
+
+// ACCESSORIES
+let sticker = document.getElementById("accessories1");
+let dadHat = document.getElementById("accessories2");
+let panelHat = document.getElementById("accessories3");
+// Sticker
+function addStickerToCart() {
+    document.getElementById("empty").classList.add("not-empty");
+    let p = document.createElement("p");
+    let itemDescription = document.createTextNode("Bullrun Brewery Sticker");
+    p.appendChild(itemDescription);
+    let itemPrice = document.createElement("p");
+    let price = document.createTextNode("$ 2");
+    itemPrice.appendChild(price);
+    let newItem = document.createElement("div");
+    newItem.classList.add("item");
+    newItem.appendChild(p);
+    newItem.appendChild(itemPrice);
+    document.getElementById("itemsAdded").appendChild(newItem);
+    shoppingCart.push(sticker);
+}
+// Dad Hat
+function addDadHatToCart() {
+    document.getElementById("empty").classList.add("not-empty");
+    let p = document.createElement("p");
+    let itemDescription = document.createTextNode("Dad Hat — Black");
+    p.appendChild(itemDescription);
+    let itemPrice = document.createElement("p");
+    let price = document.createTextNode("$ 12");
+    itemPrice.appendChild(price);
+    let newItem = document.createElement("div");
+    newItem.classList.add("item");
+    newItem.appendChild(p);
+    newItem.appendChild(itemPrice);
+    document.getElementById("itemsAdded").appendChild(newItem);
+    shoppingCart.push(dadHat);
+}
+// Panel Hat
+function addPanelHatToCart() {
+    document.getElementById("empty").classList.add("not-empty");
+    let p = document.createElement("p");
+    let itemDescription = document.createTextNode("5-Panel Hat — White");
+    p.appendChild(itemDescription);
+    let itemPrice = document.createElement("p");
+    let price = document.createTextNode("$ 14");
+    itemPrice.appendChild(price);
+    let newItem = document.createElement("div");
+    newItem.classList.add("item");
+    newItem.appendChild(p);
+    newItem.appendChild(itemPrice);
+    document.getElementById("itemsAdded").appendChild(newItem);
+    shoppingCart.push(panelHat);
+}
 
 // Clear Cart
 function clearCart() {
@@ -202,6 +305,10 @@ function clearCart() {
 }
 
 // Adjust subtotal, taxes, and total cost on click
+
+// if shopping cart has items, create a
+
+
 
 
 
@@ -240,24 +347,24 @@ function clearCart() {
 
 
 // EVENT LISTENERS
-// document.getElementById("lightDarkMode").addEventListener("click", changeMode);
-
+// ------------------------------------------------------------- //
+// Light / Dark Mode Toggle:
 document.getElementById("lightDarkMode").addEventListener("click", changeMode);
 
-// Product-Specific
+// Products:
 // Apparel
 document.getElementById("addShirtBlack").addEventListener("click", addBlackShirtToCart);
 document.getElementById("addShirtWhite").addEventListener("click", addWhiteShirtToCart);
 document.getElementById("addHoodieBlack").addEventListener("click", addBlackHoodieToCart);
 document.getElementById("addHoodieWhite").addEventListener("click", addWhiteHoodieToCart);
 // // Drinkware
-// document.getElementById("addPint").addEventListener("click", addPintToCart);
-// document.getElementById("addTulip").addEventListener("click", addTulipToCart);
-// document.getElementById("addGrowler").addEventListener("click", addGrowlerToCart);
+document.getElementById("addPint").addEventListener("click", addPintToCart);
+document.getElementById("addTulip").addEventListener("click", addTulipToCart);
+document.getElementById("addGrowler").addEventListener("click", addGrowlerToCart);
 // // Accessories
-// document.getElementById("addSticker").addEventListener("click", addStickerToCart);
-// document.getElementById("addDadHat").addEventListener("click", addDadHatToCart);
-// document.getElementById("addPanelHat").addEventListener("click", addPanelHatToCart);
+document.getElementById("addSticker").addEventListener("click", addStickerToCart);
+document.getElementById("addDadHat").addEventListener("click", addDadHatToCart);
+document.getElementById("addPanelHat").addEventListener("click", addPanelHatToCart);
 
 // Clear / Submit Shopping Cart
 document.getElementById("cartReset").addEventListener("click", clearCart);
