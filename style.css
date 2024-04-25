@@ -360,6 +360,12 @@ h1 {
     padding: 7.5px 4.5px;
 }
 
+.size-checkbox.disabled {
+    background-color: #9D9D9D;
+    color: white;
+    border: white;
+}
+
 .add-to-cart {
     background-color: #01B09B;
     padding: 15px 10px;
@@ -466,6 +472,29 @@ div.item p {
 
 .items-added.item-price {
     justify-self: flex-end;
+}
+
+div.cart-buttons {
+    padding: 20px 10px;
+    margin: 0 auto;
+}
+
+button#cartReset, button#cartSubmit {
+    font-family: "PolySans";
+    border-radius: 5px;
+    cursor: pointer;
+    border-style: none;
+    color: white;
+}
+
+button#cartReset {
+    padding: 10px 15px;
+    background-color: grey;
+}
+
+button#cartSubmit {
+    padding: 10px 45px;
+    background-color: #ff004c;
 }
 
 
