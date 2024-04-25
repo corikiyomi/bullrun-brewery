@@ -14,24 +14,24 @@
 
     <body>
         <header>
-            <img src="Icons/lightModePink.svg" alt="Bullrun Brewery primary logo">
+            <img src="Icons/lightModePink.svg" alt="Bullrun Brewery primary logo" id="lightModeLogo">
+            <img src="Icons/darkModePink.svg" alt="Bullrun Brewery primary logo" class="hidden" id="darkModeLogo">
             <nav>
                 <ul>
-                    <li><a href=#>Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#products">Shop</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#products" class="nav-link">Shop</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
+
             <!-- Toggle switch between Light and Dark mode -->
-            <button id="lightDarkMode">
-                <img src="/Icons/sun.svg" alt="light mode icon" class="hidden" id="sun">
-                <img src="/Icons/moon.svg" alt="dark mode icon" id="moon">
-            </button>
+            <input type="checkbox" id="lightDarkMode" class="switchMode" name="switchMode"><label for="lightDarkMode" id="switchModeIcon"><img src="Icons/moon.svg"><img src="Icons/sun.svg" id="sun" class="hidden"></label>
+
         </header>
 
         <main>
-            <h1><span class=semibold>Run</span> with the <span class=bold>bulls</span></h1>
+            <h1><span class="semibold">Run</span> with the <span class="bold">bulls</span></h1>
 
             <section id="hero">
                 <video width="1280" height="640" autoplay loop muted>
@@ -41,9 +41,9 @@
 
             <section id="about">
                 <img src="Images/exterior.png" alt="Exterior shot of Bullrun Brewery in Flagstaff, Arizona">
-                <div id="about-description">
+                <div id="aboutDescription">
                     <h2>Who we are</h2>
-                    <p>Here at <span class=bullrunBrewery>Bullrun Brewery</span>, craft and community meets passion &amp; creativity.</p>
+                    <p>Here at <span class="bullrun-brewery">Bullrun Brewery</span>, craft and community meets passion &amp; creativity.</p>
                     <p>Founded by a couple fueled by a dream to bring people from all over the world together, Bullrun embodies artisanal brewing at its finest. From crisp lagers, to robust ales and hoppy IPAs, each brew is crafted with locally sourced ingredients for an unforgettable experience.</p>
                     <p>But Bullrun is more than beer — it's a haven for camaraderie and adventure. Join us and become part of our story of passion, perseverance, and the vibrant spirit of the Northern Arizona mountains.</p>
                     <p>Cheers!</p>
@@ -52,106 +52,127 @@
 
             <section id="products">
                 <h2>Shop our stuff</h2>
-                <section class="product-type">
+                <section class="product-type" id="apparel">
                     <h3>Apparel</h3>
                     <section class="item" id="apparel1">
                         <h4>Classic Tee — Black / Pink</h4>
-                        <img src="" alt="">
+                        <img src="/Images/tshirt-black-pink.png" alt="Black tshirt with Bullrun Brewery logo">
                         <p class="price">$ 22</p>
-                        <p>The original <span class="bullrunBrewery">Bullrun Brewery</span> t-shirt feels like an old favorite.</p>
+                        <p>The original <span class="bullrun-brewery">Bullrun Brewery</span> t-shirt feels like an old favorite.</p>
                         <div class="sizes">
-                            <button type="button">S</button>
-                            <button type="button">M</button>
-                            <button type="button">L</button>
-                            <button type="button">XL</button>
-                            <button type="button">2XL</button>
+                            <input type="checkbox" id="a1sizeS" class="size-checkbox" name="size" value="S">
+                            <label for="a1sizeS" class="size-label">S</label>
+                            <input type="checkbox" id="a1sizeM" class="size-checkbox" name="size" value="M">
+                            <label for="a1sizeM" class="size-label">M</label>
+                            <input type="checkbox" id="a1sizeL" class="size-checkbox" name="size" value="L">
+                            <label for="a1sizeL" class="size-label">L</label>
+                            <input type="checkbox" id="a1sizeXL" class="size-checkbox" name="size" value="XL">
+                            <label for="a1sizeXL" class="size-label">XL</label>
+                            <input type="checkbox" id="a1size2XL" class="size-checkbox" name="size" value="2XL">
+                            <label for="a1size2XL" class="size-label">2XL</label>
                         </div>
-                        <button type="button" class="addToCart">Add to cart</button>
+                        <button type="button" class="add-to-cart">Add to cart</button>
                     </section>
                     <section class="item" id="apparel2">
                         <h4>Classic Tee — White / Pink</h4>
-                        <img src="" alt="">
+                        <img src="/Images/tshirt-white-pink.png" alt="White tshirt with Bullrun Brewery Logo">
                         <p class="price">$ 22</p>
-                        <p>The original <span class="bullrunBrewery">Bullrun Brewery</span> t-shirt feels like an old favorite.</p>
+                        <p>The original <span class="bullrun-brewery">Bullrun Brewery</span> t-shirt feels like an old favorite.</p>
                         <div class="sizes">
-                            <button type="button">S</button>
-                            <button type="button">M</button>
-                            <button type="button">L</button>
-                            <button type="button">XL</button>
-                            <button type="button">2XL</button>
+                            <input type="checkbox" id="a2sizeS" class="size-checkbox" name="size" value="S">
+                            <label for="a2sizeS" class="size-label">S</label>
+                            <input type="checkbox" id="a2sizeM" class="size-checkbox" name="size" value="M">
+                            <label for="a2sizeM" class="size-label">M</label>
+                            <input type="checkbox" id="a2sizeL" class="size-checkbox" name="size" value="L">
+                            <label for="a2sizeL" class="size-label">L</label>
+                            <input type="checkbox" id="a2sizeXL" class="size-checkbox" name="size" value="XL">
+                            <label for="a2sizeXL" class="size-label">XL</label>
+                            <input type="checkbox" id="a2size2XL" class="size-checkbox" name="size" value="2XL">
+                            <label for="a2size2XL" class="size-label">2XL</label>
                         </div>
-                        <button type="button" class="addToCart">Add to cart</button>
+                        <button type="button" class="add-to-cart">Add to cart</button>
                     </section>
                     <section class="item" id="apparel3">
                         <h4>Bullrun Hoodie — Black</h4>
-                        <img src="" alt="">
+                        <img src="/Images/hoodie-black.png" alt="black hoodie with bullrun brewery logo">
                         <p class="price">$ 35</p>
-                        <p>The essential hoodie. Our boxy fit and soft-to-the-touch cotton fleece combo can't be beat.</p>
+                        <p>The essential hoodie. Our reliable fit and soft-to-the-touch tech fleece combo can't be beat.</p>
                         <div class="sizes">
-                            <button type="button">S</button>
-                            <button type="button">M</button>
-                            <button type="button">L</button>
-                            <button type="button">XL</button>
-                            <button type="button">2XL</button>
+                            <input type="checkbox" id="a3sizeS" class="size-checkbox" name="size" value="S">
+                            <label for="a3sizeS" class="size-label">S</label>
+                            <input type="checkbox" id="a3sizeM" class="size-checkbox" name="size" value="M">
+                            <label for="a3sizeM" class="size-label">M</label>
+                            <input type="checkbox" id="a3sizeL" class="size-checkbox" name="size" value="L">
+                            <label for="a3sizeL" class="size-label">L</label>
+                            <input type="checkbox" id="a3sizeXL" class="size-checkbox" name="size" value="XL">
+                            <label for="a3sizeXL" class="size-label">XL</label>
+                            <input type="checkbox" id="a3size2XL" class="size-checkbox" name="size" value="2XL">
+                            <label for="a3size2XL" class="size-label">2XL</label>
                         </div>
-                        <button type="button" class="addToCart">Add to cart</button>
+                        <button type="button" class="add-to-cart">Add to cart</button>
                     </section>
                     <section class="item" id="apparel4">
                         <h4>Bullrun Hoodie — White</h4>
-                        <img src="" alt="">
+                        <img src="/Images/hoodie-white.png" alt="white hoodie with bullrun brewery logo">
                         <p class="price">$ 35</p>
-                        <p>The essential hoodie. Our boxy fit and soft-to-the-touch cotton fleece combo can't be beat.</p>
+                        <p>The essential hoodie. Our reliable fit and soft-to-the-touch tech fleece combo can't be beat.</p>
                         <div class="sizes">
-                            <button type="checkbox">S</button>
-                            <button type="button">M</button>
-                            <button type="button">L</button>
-                            <button type="button">XL</button>
-                            <button type="button">2XL</button>
+                            <input type="checkbox" id="a4sizeS" class="size-checkbox" name="size" value="S">
+                            <label for="a4sizeS" class="size-label">S</label>
+                            <input type="checkbox" id="a4sizeM" class="size-checkbox" name="size" value="M">
+                            <label for="a4sizeM" class="size-label">M</label>
+                            <input type="checkbox" id="a4sizeL" class="size-checkbox" name="size" value="L">
+                            <label for="a4sizeL" class="size-label">L</label>
+                            <input type="checkbox" id="a4sizeXL" class="size-checkbox" name="size" value="XL">
+                            <label for="a4sizeXL" class="size-label">XL</label>
+                            <input type="checkbox" id="a4size2XL" class="size-checkbox" name="size" value="2XL">
+                            <label for="a4size2XL" class="size-label">2XL</label>
                         </div>
-                        <button type="button" class="addToCart">Add to cart</button>
+                        <button type="button" class="add-to-cart">Add to cart</button>
                     </section>
 
                 </section>
-                <section class="product-type">
+                <section class="product-type" id="drinkware">
                     <h3>Drinkware</h3>
                     <section class="item" id="drinkware1">
                         <h4>Bullrun Brewery Pint</h4>
-                        <img src="" alt="">
+                        <img src="/Images/pint.png" alt="pint of beer with bullrun brewery logo">
                         <p class="price">$ 14</p>
-                        <button type="button" class="addToCart">Add to cart</button>
+                        <button type="button" class="add-to-cart">Add to cart</button>
                     </section>
                     <section class="item" id="drinkware2">
                         <h4>Logo Tulip Glass</h4>
-                        <img src="" alt="">
+                        <img src="/Images/tulip-glass.png" alt="tulip glass of beer with bullrun brewery logo">
                         <p class="price">$ 12</p>
-                        <button type="button" class="addToCart">Add to cart</button>
+                        <button type="button" class="add-to-cart">Add to cart</button>
                     </section>
                     <section class="item" id="drinkware3">
                         <h4>64oz. Growler — Amber</h4>
-                        <img src="" alt="">
+                        <img src="/Images/growler-amber.png" alt="amber growler 64oz with bullrun brewery logo">
                         <p class="price">$ 35</p>
-                        <button type="button" class="addToCart">Add to cart</button>
+                        <p>Bring your growler by the brewery anytime and we'll fill it up for you!</p>
+                        <button type="button" class="add-to-cart">Add to cart</button>
                     </section>
                 </section>
-                <section class="product-type">
+                <section class="product-type" id="accessories">
                     <h3>Accessories &amp; little things</h3>
                     <section class="item" id="accessories1">
                         <h4>Bullrun Brewery Sticker</h4>
-                        <img src="" alt="">
+                        <img src="/Images/sticker.png" alt="bullrun brewery logo sticker">
                         <p class="price">$ 2</p>
-                        <button type="button" class="addToCart">Add to cart</button>
+                        <button type="button" class="add-to-cart">Add to cart</button>
                     </section>
                     <section class="item" id="accessories2">
                         <h4>Dad Hat — Black</h4>
-                        <img src="" alt="">
+                        <img src="/Images/dad-hat.png" alt="black six panel hat with bullrun brewery logo">
                         <p class="price">$ 12</p>
-                        <button type="button" class="addToCart">Add to cart</button>
+                        <button type="button" class="add-to-cart">Add to cart</button>
                     </section>
                     <section class="item" id="accessories3">
                         <h4>5-Panel Hat — White</h4>
-                        <img src="" alt="">
+                        <img src="/Images/5-panel-hat.png" alt="white 5-panel hat with bullrun brewery logo">
                         <p class="price">$ 15</p>
-                        <button type="button" class="addToCart">Add to cart</button>
+                        <button type="button" class="add-to-cart">Add to cart</button>
                     </section>
                 </section>
             </section>
@@ -162,52 +183,64 @@
         
             <section id="contact">
                 <h2>Contact Us</h2>
-                <p>Have a question or want to leave us a comment? Interested in working with us for an event or want to work for <span class="bullrunBrewery"> Bullrun Brewery</span>?</p>
+                <p>Have a question or want to leave us a comment? Interested in working with us for an event or want to work for <span class="bullrun-brewery"> Bullrun Brewery</span>?</p>
                 <p>Fill out the form below! We would love to talk you more about it. We'll get back to you within 48 hours. Promise!</p>
                 <form>
                     <label for="first">First name</label>
-                    <input type="text" id="first" name="first">
+                    <input type="text" id="first" name="first" placeholder="Required" required>
 
                     <label for="last">Last name</label>
-                    <input type="text" id="last" name="last">
+                    <input type="text" id="last" name="last" placeholder="Required" required>
 
-                    <label for="preferredContactMethod">Preferred contact method</label>
-                    <input type="radio" id="preferredContactMethod" name="preferredContactMethod">
+                    <fieldset>
+                        <legend>Preferred Contact Method</legend>
+                        <input type="radio" id="emailPreferred" name="preferred" value="email" checked>
+                        <label for="emailPreferred" class="radio-label">Email</label>
+                        <input type="radio" id="callPreferred" name="preferred" value="call">
+                        <label for="callPreferred" class="radio-label">Call</label>
+                        <input type="radio" id="textPreferred" name="preferred" value="text">
+                        <label for="textPreferred" class="radio-label">Text</label>
+                    </fieldset>
+
 
                     <label for="email">Email</label>
-                    <input type="email" id="email" name="email">
+                    <input type="email" id="email" name="email" placeholder="myemail@gmail.com">
 
                     <label for="phone">Phone</label>
-                    <input type="tel" id="phone" name="phone">
+                    <input type="tel" id="phone" name="phone" placeholder="(###) ### - ####">
 
-                    <label for="comments">What can we do for you? Give it to us straight. The more details the better.</label>
-                    <textarea name="comments" rows="10" cols="70"></textarea>
+                    <label for="comments">Comments & questions</label>
+                    <textarea name="comments" rows="7" cols="30" placeholder="What can we do for you? Give it to us straight. The more details the better!"></textarea>
 
-                    <input type="reset" value="Clear form">
-                    <button id="submit">Submit</button>
+                    <div id="formButtons">
+                        <input type="reset" value="Clear form" id="clearForm">
+                        <button id="submit">Submit</button>
+                    </div>
                 </form>
-                <button id="backToTop"><a href="#">Back to top<img src="Icons/upArrow.svg"></a></button>
             </section>
+            <a href="#"><button id="backToTop">Back to top<img src="Icons/upArrow.svg"></button></a>
         </main>
         <footer>
             <img src="Icons/darkModePink.svg" alt="">
-            <ul class="footerNav">
+            <ul class="footer-nav">
                 <li><a href=#>Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#products">Shop</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
-            <ul class="socialMediaIcons">
+            <ul class="social-media-icons">
                 <li><a href=#><img src="Icons/instagram.svg"></a></li>
                 <li><a href=#><img src="Icons/X.svg"></a></li>
                 <li><a href=#><img src="Icons/facebook.svg"></a></li>
                 <li><a href=#><img src="Icons/tiktok.svg"></a></li>
             </ul>
+            <div id="copyright">
+                <p>Copyright &copy; 2024</p>
+                <p>By Cori Komiyama</p>
+                <p>For education purposes only</p>
+            </div>
         </footer>
 
-
-        <script>
-
-        </script>
+        <script src="script.js"></script>
     </body>
 </html>
