@@ -541,6 +541,24 @@ div.item.not-empty {
     padding: 0 100px;
 }
 
+#contact div#errorOutput {
+    font-size: 0.8rem;
+    color: red;
+}
+
+#errorList.li {
+    list-style: none;
+}
+
+.no-error {
+    display: none;
+}
+
+.required::after {
+    content: "  *";
+    color: red;
+}
+
 #contact form {
     padding-top: 40px;
     padding-left: 60px;

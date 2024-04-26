@@ -1,6 +1,5 @@
 "use strict";
 
-
 // LIGHT MODE - DARK MODE SWITCH
 let moonIcon = document.getElementById("moon");
 let sunIcon = document.getElementById("sun");
@@ -324,9 +323,9 @@ let totalOutput = document.getElementById("total");
 
 function calculateCost () {
     let itemID = [];
-    let subtotal = 0;
-    let taxes = 0;
-    let total = 0;
+    subtotal = 0;
+    taxes = 0;
+    total = 0;
 
     // Calculate Subtotal
     let a1 = /^a1/;
@@ -372,42 +371,170 @@ function calculateCost () {
 
     // Calculate Total
     total = parseFloat(subtotal) + parseFloat(taxes);
+    total = total.toFixed(2);
     // display the total in p
     document.getElementById("total").innerHTML = `$ ${total}`;
 }; 
 
 
 
+// CHECKOUT CART
+function submitCart() {
+    window.alert(`Thank you for shopping at Bullrun Brewery! \n\nYour total was $${total}.\n\nClose this window and keep browsing with us!`)
+    // Reload page at same location, empties cart
+    location.reload();
+};
+
+
 
 // FORM VALIDATION
+let formIsValid = false;
+let fnameIsValid = false;
+let lnameIsValid = false;
+let emailIsValid = false;
+let phoneIsValid = false;
 
-// First name required
+let fname = document.getElementById("first");
+let lname = document.getElementById("last");
+let nameRegEx = /[a-z]{3,}/i;
+let selectContact = document.querySelectorAll("fieldset > input[type=radio]");
+console.log(selectContact);
+let emailPreferred = document.getElementById("emailPreferred");
+let callPreferred = document.getElementById("callPreferred");
+let textPreferred = document.getElementById("textPreferred");
+let email = document.getElementById("email");
+let phone = document.getElementById("phone");
+let comments = document.querySelector("textarea");
+let errorOutput = document.getElementById("errorOutput"); // div
+let ul = document.getElementById("errorOutput"); // ul
 
-// Last name required
+let invalidInputs = [];
 
-// Preferred contact method selection required. Default is email
+// preferred contact check
+function contactMethod() { 
+    // Whichever preferred contact method is selected, corresponding field is then required, making the other optional.
+    if (emailPreferred.checked) {
+        email.attributes.required = "";
+        phone.attributes.required = false;
+        document.getElementById("emailLabel").classList.add("required");
+        document.getElementById("phoneLabel").classList.remove("required");
+    } else if (callPreferred.checked || textPreferred.checked) {
+        phone.attributes.required = "";
+        document.getElementById("phoneLabel").classList.add("required");
+        document.getElementById("emailLabel").classList.remove("required");
+        email.attributes.required = false;
+        phone.attributes.required = "";
+    }
+};
 
-// Whichever preferred contact method is selected, corresponding field is then required, making the other optional.
+// validate form inputs
+function formValid(e) {
+    e.preventDefault();
+    // clear ul
+    errorOutput.innerHTML = "";
+    // first name check
+    try {
+        if (!nameRegEx.test(fname.value)) {
+            invalidInputs.push(fname);
+            throw new Error("First name is required.");
+        } else {
+            fname.classList.remove("no-error");
+            fnameIsValid = true;
+        }
+    } catch(error) {
+        let fnameError = document.createElement("li");
+        fnameError.innerHTML = error.message;
+        ul.appendChild(fnameError);
+    }
 
-// Comments are required. Display character count in the bottom right corner? 0/1000
+    // last name check
+    try {
+        if (!nameRegEx.test(lname.value)) {
+            invalidInputs.push(lname);
+            throw new Error("Last name is required.");
+        } else {
+            lname.classList.add("no-error");
+            lnameIsValid = true;
+        }
+    } catch(error) {
+        let lnameError = document.createElement("li");
+        lnameError.innerHTML = error.message;
+        ul.appendChild(lnameError);
+    }
 
+    // preferred contact field
+    let emailRegEx = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,5}$/;
+    try {
+        if (document.getElementById("emailLabel").classList.contains("required")) {
+            if (!emailRegEx.test(email.value)) {
+                invalidInputs.push(email);
+                throw new Error("Email address is required. Invalid or missing email address.");
+            } else {
+                email.classList.add("no-error");
+                emailIsValid = true;
+            }
+        } else if (document.getElementById("phoneLabel").classList.contains("required")) {
+            if (phone.value.length !== 10) {
+                invalidInputs.push(phone);
+                throw new Error("Please enter a valid phone number.");
+            } else {
+                phone.classList.add("no-error");
+                phoneIsValid = true;
+            }
+        }
 
+    } catch(error) {
+        let emailError = document.createElement("li");
+        emailError.innerHTML = error.message;
+        ul.appendChild(emailError);
+    }
 
+    // if no errors exist
+    if (invalidInputs.length == 0) {
+        errorOutput.classList.add("no-error");
+        errorOutput.classList.remove("error");
+    } else {
+        errorOutput.classList.remove("no-error");
+        for (let x of invalidInputs) {
+            x.classList.add("error");
+        }
+    }
+
+    // check if all fields are valid
+    if (fnameIsValid && lnameIsValid) {
+        if (emailIsValid || phoneIsValid) {
+        formIsValid = true;
+        }
+    } else {
+        formIsValid = false;
+    }
+};
 
 
 
 // SUBMIT
 
-// When form is submitted, display the form contents and a message thanking the user for submitting. After time on screen, message disappears.
-
-// If there are items in the shopping cart, return to Products section. 
-
-// If the shopping cart is empty, reload the page.
-
-
-
-
-
+function submitForm() {
+    // If form is valid and submit button is clicked:
+    if (formIsValid) {
+        // Display a message thanking the user for submitting in alert window
+        window.alert(`Thank you for submitting your form. You'll be hearing from us soon!\n\nYou still have items in your cart! Don't forget about them.`);
+        // If there are items in the shopping cart, return to Products section
+        if (shoppingCart.length !== 0) {
+            window.document.location.href = "#products";
+        } else {  // If there are no items in the shopping cart, reload the page to the top
+            // Display a message thanking the user for submitting in alert window
+            window.alert(`Thank you for submitting your form. You'll be hearing from us soon!\n\nThis page will reload.`);
+            // reload to top of page
+            window.scrollTo({
+                top: 0,
+                left: 0,
+                behavior: "instant",
+            });
+            location.reload();
+        }
+    }
+};
 
 
 
@@ -440,4 +567,11 @@ cartBtns.forEach(cartBtn => {
 
 // Clear / Submit Shopping Cart
 document.getElementById("cartReset").addEventListener("click", clearCart);
-// document.getElementById("cartSubmit").addEventListener("click", submitCart);
+document.getElementById("cartSubmit").addEventListener("click", submitCart);
+
+// Validate / Submit Form
+selectContact.forEach(contactType => {
+    contactType.addEventListener("click", contactMethod);
+});
+document.getElementById("submit").addEventListener("click", formValid);
+document.getElementById("submit").addEventListener("click", submitForm);
