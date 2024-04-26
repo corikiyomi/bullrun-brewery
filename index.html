@@ -224,11 +224,12 @@
                 <p>Have a question or want to leave us a comment? Interested in working with us for an event or want to work for <span class="bullrun-brewery"> Bullrun Brewery</span>?</p>
                 <p>Fill out the form below! We would love to talk you more about it. We'll get back to you within 48 hours. Promise!</p>
                 <form>
+                    <p id="errorOutput"></p>
                     <label for="first" class="required">First name</label>
-                    <input type="text" id="first" name="first" placeholder="Required" required>
+                    <input type="text" id="first" name="first" placeholder="Required">
 
                     <label for="last" class="required">Last name</label>
-                    <input type="text" id="last" name="last" placeholder="Required" required>
+                    <input type="text" id="last" name="last" placeholder="Required">
 
                     <fieldset>
                         <legend class="required">Preferred Contact Method</legend>
@@ -248,7 +249,7 @@
                     <input type="tel" id="phone" name="phone" placeholder="(###) ### - ####">
 
                     <label for="comments" class="required">Comments & questions</label>
-                    <textarea name="comments" rows="7" cols="30" placeholder="What can we do for you? Give it to us straight. The more details the better!" required min-length="10" max-length="1000"></textarea>
+                    <textarea name="comments" rows="7" cols="30" placeholder="What can we do for you? Give it to us straight. The more details the better!" min-length="10" max-length="1000"></textarea>
 
                     <div id="formButtons">
                         <input type="reset" value="Clear form" id="clearForm">

@@ -1,6 +1,5 @@
 "use strict";
 
-
 // LIGHT MODE - DARK MODE SWITCH
 let moonIcon = document.getElementById("moon");
 let sunIcon = document.getElementById("sun");
@@ -382,17 +381,62 @@ function calculateCost () {
 // CHECKOUT CART
 function submitCart() {
     window.alert(`Thank you for shopping at Bullrun Brewery! \n\nYour total was $${total}.\n\nClose this window and keep browsing with us!`)
-}
+    // Reload page at same location, empties cart
+    location.reload();
+};
 
 
 
 // FORM VALIDATION
+let formIsValid = false;
+let fnameIsValid = false;
+let lnameIsValid = false;
 
-// First name required
+let fname = document.getElementById("first");
+let lname = document.getElementsByName("last");
+let selectContact = document.querySelectorAll("fieldset > input[type=radio]");
+console.log(selectContact);
+let emailPreferred = document.getElementById("emailPreferred");
+let callPreferred = document.getElementById("callPreferred");
+let textPreferred = document.getElementById("textPreferred");
+let email = document.getElementById("email");
+let phone = document.getElementById("phone");
+let comments = document.querySelector("textarea");
 
-// Last name required
+let errorOutput = document.getElementById("errorOutput");
 
-// Preferred contact method selection required. Default is email
+function formValid(e) {
+    e.preventDefault();
+    errorOutput.innerHTML = "";
+    errorOutput.classList.remove("error");
+    fname.classList.remove("errorInput");
+};
+
+let regex = /[a-z]{3,}/i;
+
+function fnameValid(e) {
+    e.preventDefault();
+    // First name required
+    if (!regex.test(fname.value)) {
+        errorOutput.classList.add("error");
+        errorOutput.innerHTML += "Your first name is required.";
+    } else {
+        fnameIsValid = regex.test(fname.value);
+    }
+};
+function lnameValid(e) {
+    e.preventDefault();
+    // Last name required
+    if (!regex.test(lname.value)) {
+        errorOutput.classList.add("error");
+        errorOutput.innerHTML += `\nYour last name is required.`;
+    } else {
+        lnameIsValid = regex.test(lname.value);
+    }
+};
+
+// Preferred contact method selection required.
+
 
 // Whichever preferred contact method is selected, corresponding field is then required, making the other optional.
 
@@ -401,16 +445,21 @@ function submitCart() {
 
 
 
-
-
 // SUBMIT
 
-// When form is submitted, display the form contents and a message thanking the user for submitting. After time on screen, message disappears.
+function submitForm() {
+    // If form is valid and submit button is clicked:
+    if (formIsValid) {
+        // Display a message thanking the user for submitting in alert window
+        window.alert(`Thank you for submitting your form. You'll be hearing from us soon!`);
 
-// If there are items in the shopping cart, return to Products section. 
-
-// If the shopping cart is empty, reload the page.
-
+        // If there are items in the shopping cart, return to Products section
+        if (shoppingCart.length !== 0) {
+            window.document.location.href = "/#products";
+        }
+        // If there are no items in the shopping cart, reload the page to the top
+    }
+}
 
 
 
@@ -448,3 +497,8 @@ cartBtns.forEach(cartBtn => {
 // Clear / Submit Shopping Cart
 document.getElementById("cartReset").addEventListener("click", clearCart);
 document.getElementById("cartSubmit").addEventListener("click", submitCart);
+
+// Submit Form
+document.getElementById("submit").addEventListener("click", formValid);
+document.getElementById("submit").addEventListener("click", fnameValid);
+document.getElementById("submit").addEventListener("click", lnameValid);

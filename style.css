@@ -541,6 +541,11 @@ div.item.not-empty {
     padding: 0 100px;
 }
 
+#contact p#errorOutput {
+    font-size: 0.8rem;
+    color: red;
+}
+
 .required::after {
     content: "  *";
     color: red;
