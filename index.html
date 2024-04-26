@@ -12,7 +12,7 @@
         <title>Bullrun Brewery</title>
     </head>
     <body>
-        <header href="home">
+        <header>
             <img src="Icons/lightModePink.svg" alt="Bullrun Brewery primary logo" id="lightModeLogo">
             <img src="Icons/darkModePink.svg" alt="Bullrun Brewery primary logo" class="hidden" id="darkModeLogo">
             <nav>
@@ -25,7 +25,7 @@
             </nav>
 
             <!-- Toggle switch between Light and Dark mode -->
-            <input type="checkbox" id="lightDarkMode" class="switchMode" name="switchMode"><label for="lightDarkMode" id="switchModeIcon"><img src="Icons/moon.svg"><img src="Icons/sun.svg" id="sun" class="hidden"></label>
+            <input type="checkbox" id="lightDarkMode" class="switchMode" name="switchMode"><label for="lightDarkMode" id="switchModeIcon"><img src="Icons/moon.svg" alt=""><img src="Icons/sun.svg" id="sun" alt="" class="hidden"></label>
 
         </header>
 
@@ -250,10 +250,10 @@
                     <input type="email" id="email" name="email" placeholder="myemail@gmail.com">
 
                     <label for="phone" id="phoneLabel">Phone</label>
-                    <input type="tel" id="phone" name="phone" placeholder="(###) ### - ####" min-length="0" max-length="10" size="10">
+                    <input type="tel" id="phone" name="phone" placeholder="(###) ### - ####" size="10">
 
                     <label for="comments" class="required" >Comments & questions</label>
-                    <textarea name="comments" rows="7" cols="30" placeholder="What can we do for you? Give it to us straight. The more details the better!" required min-length="20" max-length="1000"></textarea>
+                    <textarea name="comments" rows="7" cols="30" placeholder="What can we do for you? Give it to us straight. The more details the better!" required minlength="20" maxlength="1000"></textarea>
 
                     <div id="formButtons">
                         <input type="reset" value="Clear form" id="clearForm">
@@ -261,7 +261,7 @@
                     </div>
                 </form>
             </section>
-            <a href="#"><button id="backToTop">Back to top<img src="Icons/upArrow.svg"></button></a>
+            <a href="#"><button id="backToTop">Back to top<img src="Icons/upArrow.svg" alt="arrow"></button></a>
         </main>
         <footer>
             <img src="Icons/darkModePink.svg" alt="">
@@ -272,10 +272,10 @@
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <ul class="social-media-icons">
-                <li><a href=#><img src="Icons/instagram.svg"></a></li>
-                <li><a href=#><img src="Icons/X.svg"></a></li>
-                <li><a href=#><img src="Icons/facebook.svg"></a></li>
-                <li><a href=#><img src="Icons/tiktok.svg"></a></li>
+                <li><a href=#><img src="Icons/instagram.svg" alt="instagram icon"></a></li>
+                <li><a href=#><img src="Icons/X.svg" alt="x icon"></a></li>
+                <li><a href=#><img src="Icons/facebook.svg" alt="facebook icon"></a></li>
+                <li><a href=#><img src="Icons/tiktok.svg" alt="tiktok icon"></a></li>
             </ul>
             <div id="copyright">
                 <p>Copyright &copy; 2024</p>
