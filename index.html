@@ -11,7 +11,6 @@
         
         <title>Bullrun Brewery</title>
     </head>
-
     <body>
         <header>
             <img src="Icons/lightModePink.svg" alt="Bullrun Brewery primary logo" id="lightModeLogo">
@@ -52,6 +51,45 @@
 
             <section id="products">
                 <h2>Shop our stuff</h2>
+                <!-- Shopping Cart -->
+                <section id="shoppingCart">
+                    <h3>Shopping Cart</h3>
+                    <hr>
+                    <div id="itemsAdded" class="items-added">
+                        <!-- Uses js to add items to cart -->
+                        <div class="item" id="empty"> 
+                            <p>Your cart is empty.</p>
+                        </div>  
+                    </div>
+                    <hr>
+                    
+                    <div class="price">
+                        <p>Subtotal</p>
+                        <p id="subtotal">$ 0</p>
+                        <!-- Uses js to calculate subtotal -->
+                    </div>
+                    
+                    <div class="price taxes">
+                        <p>Tax <span class="small">(5.6%)</span></p>
+                        <p id="taxes">$ 0</p>
+                        <!-- Uses js to calculate appropriate taxes on the subtotal -->
+                    </div>
+                    <hr>
+                    
+                    <div class="price total">
+                        <p><span class="strong">Total</span></p>
+                        <p id="total"><span class="strong">$ 0</span></p>
+                        <!-- Uses js to calculate the total by adding subtotal and taxes -->
+                    </div>
+                    <!-- Clear cart / Checkout -->
+                    <div class="cart-buttons">
+                        <button type="button" id="cartReset">Empty my cart</button>
+                        <button type="button" id="cartSubmit">Checkout</button>
+                    </div>
+
+                </section>
+
+                <!-- Product Display -->
                 <section class="product-type" id="apparel">
                     <h3>Apparel</h3>
                     <section class="item" id="apparel1">
@@ -60,18 +98,18 @@
                         <p class="price">$ 22</p>
                         <p>The original <span class="bullrun-brewery">Bullrun Brewery</span> t-shirt feels like an old favorite.</p>
                         <div class="sizes">
-                            <input type="checkbox" id="a1sizeS" class="size-checkbox" name="size" value="S">
+                            <input type="checkbox" id="a1sizeS" class="size-checkbox S" name="size" value="S">
                             <label for="a1sizeS" class="size-label">S</label>
-                            <input type="checkbox" id="a1sizeM" class="size-checkbox" name="size" value="M">
+                            <input type="checkbox" id="a1sizeM" class="size-checkbox M" name="size" value="M">
                             <label for="a1sizeM" class="size-label">M</label>
-                            <input type="checkbox" id="a1sizeL" class="size-checkbox" name="size" value="L">
+                            <input type="checkbox" id="a1sizeL" class="size-checkbox L" name="size" value="L">
                             <label for="a1sizeL" class="size-label">L</label>
-                            <input type="checkbox" id="a1sizeXL" class="size-checkbox" name="size" value="XL">
+                            <input type="checkbox" id="a1sizeXL" class="size-checkbox XL" name="size" value="XL">
                             <label for="a1sizeXL" class="size-label">XL</label>
-                            <input type="checkbox" id="a1size2XL" class="size-checkbox" name="size" value="2XL">
+                            <input type="checkbox" id="a1size2XL" class="size-checkbox 2XL" name="size" value="2XL">
                             <label for="a1size2XL" class="size-label">2XL</label>
                         </div>
-                        <button type="button" class="add-to-cart">Add to cart</button>
+                        <button type="button" class="add-to-cart" id="addShirtBlack">Add to cart</button>
                     </section>
                     <section class="item" id="apparel2">
                         <h4>Classic Tee — White / Pink</h4>
@@ -79,18 +117,18 @@
                         <p class="price">$ 22</p>
                         <p>The original <span class="bullrun-brewery">Bullrun Brewery</span> t-shirt feels like an old favorite.</p>
                         <div class="sizes">
-                            <input type="checkbox" id="a2sizeS" class="size-checkbox" name="size" value="S">
+                            <input type="checkbox" id="a2sizeS" class="size-checkbox S" name="size" value="S">
                             <label for="a2sizeS" class="size-label">S</label>
-                            <input type="checkbox" id="a2sizeM" class="size-checkbox" name="size" value="M">
+                            <input type="checkbox" id="a2sizeM" class="size-checkbox M" name="size" value="M">
                             <label for="a2sizeM" class="size-label">M</label>
-                            <input type="checkbox" id="a2sizeL" class="size-checkbox" name="size" value="L">
+                            <input type="checkbox" id="a2sizeL" class="size-checkbox L" name="size" value="L">
                             <label for="a2sizeL" class="size-label">L</label>
-                            <input type="checkbox" id="a2sizeXL" class="size-checkbox" name="size" value="XL">
+                            <input type="checkbox" id="a2sizeXL" class="size-checkbox XL" name="size" value="XL">
                             <label for="a2sizeXL" class="size-label">XL</label>
-                            <input type="checkbox" id="a2size2XL" class="size-checkbox" name="size" value="2XL">
+                            <input type="checkbox" id="a2size2XL" class="size-checkbox 2XL" name="size" value="2XL">
                             <label for="a2size2XL" class="size-label">2XL</label>
                         </div>
-                        <button type="button" class="add-to-cart">Add to cart</button>
+                        <button type="button" class="add-to-cart" id="addShirtWhite">Add to cart</button>
                     </section>
                     <section class="item" id="apparel3">
                         <h4>Bullrun Hoodie — Black</h4>
@@ -98,18 +136,18 @@
                         <p class="price">$ 35</p>
                         <p>The essential hoodie. Our reliable fit and soft-to-the-touch tech fleece combo can't be beat.</p>
                         <div class="sizes">
-                            <input type="checkbox" id="a3sizeS" class="size-checkbox" name="size" value="S">
+                            <input type="checkbox" id="a3sizeS" class="size-checkbox S" name="size" value="S">
                             <label for="a3sizeS" class="size-label">S</label>
-                            <input type="checkbox" id="a3sizeM" class="size-checkbox" name="size" value="M">
+                            <input type="checkbox" id="a3sizeM" class="size-checkbox M" name="size" value="M">
                             <label for="a3sizeM" class="size-label">M</label>
-                            <input type="checkbox" id="a3sizeL" class="size-checkbox" name="size" value="L">
+                            <input type="checkbox" id="a3sizeL" class="size-checkbox L" name="size" value="L">
                             <label for="a3sizeL" class="size-label">L</label>
-                            <input type="checkbox" id="a3sizeXL" class="size-checkbox" name="size" value="XL">
+                            <input type="checkbox" id="a3sizeXL" class="size-checkbox XL" name="size" value="XL">
                             <label for="a3sizeXL" class="size-label">XL</label>
-                            <input type="checkbox" id="a3size2XL" class="size-checkbox" name="size" value="2XL">
+                            <input type="checkbox" id="a3size2XL" class="size-checkbox 2XL" name="size" value="2XL">
                             <label for="a3size2XL" class="size-label">2XL</label>
                         </div>
-                        <button type="button" class="add-to-cart">Add to cart</button>
+                        <button type="button" class="add-to-cart" id="addHoodieBlack">Add to cart</button>
                     </section>
                     <section class="item" id="apparel4">
                         <h4>Bullrun Hoodie — White</h4>
@@ -117,18 +155,18 @@
                         <p class="price">$ 35</p>
                         <p>The essential hoodie. Our reliable fit and soft-to-the-touch tech fleece combo can't be beat.</p>
                         <div class="sizes">
-                            <input type="checkbox" id="a4sizeS" class="size-checkbox" name="size" value="S">
+                            <input type="checkbox" id="a4sizeS" class="size-checkbox S" name="size" value="S">
                             <label for="a4sizeS" class="size-label">S</label>
-                            <input type="checkbox" id="a4sizeM" class="size-checkbox" name="size" value="M">
+                            <input type="checkbox" id="a4sizeM" class="size-checkbox M" name="size" value="M">
                             <label for="a4sizeM" class="size-label">M</label>
-                            <input type="checkbox" id="a4sizeL" class="size-checkbox" name="size" value="L">
+                            <input type="checkbox" id="a4sizeL" class="size-checkbox L" name="size" value="L">
                             <label for="a4sizeL" class="size-label">L</label>
-                            <input type="checkbox" id="a4sizeXL" class="size-checkbox" name="size" value="XL">
+                            <input type="checkbox" id="a4sizeXL" class="size-checkbox XL" name="size" value="XL">
                             <label for="a4sizeXL" class="size-label">XL</label>
-                            <input type="checkbox" id="a4size2XL" class="size-checkbox" name="size" value="2XL">
+                            <input type="checkbox" id="a4size2XL" class="size-checkbox 2XL" name="size" value="2XL">
                             <label for="a4size2XL" class="size-label">2XL</label>
                         </div>
-                        <button type="button" class="add-to-cart">Add to cart</button>
+                        <button type="button" class="add-to-cart" id="addHoodieWhite">Add to cart</button>
                     </section>
 
                 </section>
@@ -138,20 +176,20 @@
                         <h4>Bullrun Brewery Pint</h4>
                         <img src="/Images/pint.png" alt="pint of beer with bullrun brewery logo">
                         <p class="price">$ 14</p>
-                        <button type="button" class="add-to-cart">Add to cart</button>
+                        <button type="button" class="add-to-cart" id="addPint">Add to cart</button>
                     </section>
                     <section class="item" id="drinkware2">
                         <h4>Logo Tulip Glass</h4>
                         <img src="/Images/tulip-glass.png" alt="tulip glass of beer with bullrun brewery logo">
                         <p class="price">$ 12</p>
-                        <button type="button" class="add-to-cart">Add to cart</button>
+                        <button type="button" class="add-to-cart" id="addTulip">Add to cart</button>
                     </section>
                     <section class="item" id="drinkware3">
                         <h4>64oz. Growler — Amber</h4>
                         <img src="/Images/growler-amber.png" alt="amber growler 64oz with bullrun brewery logo">
                         <p class="price">$ 35</p>
                         <p>Bring your growler by the brewery anytime and we'll fill it up for you!</p>
-                        <button type="button" class="add-to-cart">Add to cart</button>
+                        <button type="button" class="add-to-cart" id="addGrowler">Add to cart</button>
                     </section>
                 </section>
                 <section class="product-type" id="accessories">
@@ -160,19 +198,19 @@
                         <h4>Bullrun Brewery Sticker</h4>
                         <img src="/Images/sticker.png" alt="bullrun brewery logo sticker">
                         <p class="price">$ 2</p>
-                        <button type="button" class="add-to-cart">Add to cart</button>
+                        <button type="button" class="add-to-cart" id="addSticker">Add to cart</button>
                     </section>
                     <section class="item" id="accessories2">
                         <h4>Dad Hat — Black</h4>
                         <img src="/Images/dad-hat.png" alt="black six panel hat with bullrun brewery logo">
                         <p class="price">$ 12</p>
-                        <button type="button" class="add-to-cart">Add to cart</button>
+                        <button type="button" class="add-to-cart" id="addDadHat">Add to cart</button>
                     </section>
                     <section class="item" id="accessories3">
                         <h4>5-Panel Hat — White</h4>
                         <img src="/Images/5-panel-hat.png" alt="white 5-panel hat with bullrun brewery logo">
                         <p class="price">$ 15</p>
-                        <button type="button" class="add-to-cart">Add to cart</button>
+                        <button type="button" class="add-to-cart" id="addPanelHat">Add to cart</button>
                     </section>
                 </section>
             </section>
@@ -240,7 +278,7 @@
                 <p>For education purposes only</p>
             </div>
         </footer>
-
         <script src="script.js"></script>
     </body>
+
 </html>

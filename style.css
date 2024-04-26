@@ -210,12 +210,14 @@ h1 {
 
 /************* PRODUCT DISPLAY SECTION **************/
 
+
+/*************** PRODUCTS ****************/
+
 #products {
-    /* display: flex;
-    flex-direction: column; */
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: 285px, repeat(10, 375px);
+    width: 100vw;
+    grid-template-columns: 3fr 3fr 3fr 2fr 2fr;
+    /* grid-template-rows: 285px, repeat(10, 375px); */
 }
 
 #products h2 {
@@ -239,11 +241,15 @@ h1 {
 
 .product-type {
     padding-left: 75px;
-    padding-right: 75px;
+    /* padding-right: 75px; */
     grid-column: 1 / 5;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+}
+
+.product-type#apparel {
+    grid-row-start: 2;
 }
 
 #products h3 {
@@ -354,6 +360,12 @@ h1 {
     padding: 7.5px 4.5px;
 }
 
+.size-checkbox.disabled {
+    background-color: #9D9D9D;
+    color: white;
+    border: white;
+}
+
 .add-to-cart {
     background-color: #01B09B;
     padding: 15px 10px;
@@ -404,6 +416,105 @@ h1 {
     object-fit: cover;
 }
 
+/************ SHOPPING CART *************/
+
+#shoppingCart {
+    grid-column: 4 / 6;
+    grid-row-start: 2;
+    padding: 0px 30px 0px 10px;
+    height: 1fr;
+    float: right;
+    margin-left: 30px;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+#shoppingCart p {
+    font-size: 0.9rem;
+    padding-left: 20px;
+}
+
+#shoppingCart hr {
+    margin: 0;
+    color: gray;
+    border-style: inset;
+    border-width: 1px;
+}
+
+.strong {
+    font-weight: bolder;
+    text-transform: uppercase;
+}
+
+div.item {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin: 0;
+}
+
+div.item p {
+    margin: 0;
+    padding-bottom: 10px;
+}
+
+.items-added, .price {
+    justify-self: flex-start;
+    align-items: left;
+}
+
+.items-added.item-price {
+    justify-self: flex-end;
+}
+
+div.price, div.price.taxes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0;
+}
+
+span.small {
+    font-size: 0.75rem;
+    font-style: italic;
+}
+
+p#subtotal, p#taxes, p#total {
+    margin-right: 10px;
+}
+
+div.cart-buttons {
+    padding: 20px 10px;
+    margin: 0 auto;
+}
+
+button#cartReset, button#cartSubmit {
+    font-family: "PolySans";
+    border-radius: 5px;
+    cursor: pointer;
+    border-style: none;
+    color: white;
+}
+
+button#cartReset {
+    padding: 10px 15px;
+    background-color: grey;
+}
+
+button#cartSubmit {
+    padding: 10px 45px;
+    background-color: #ff004c;
+}
+
+div.item.not-empty {
+    display: none;
+}
 
 
 /******* CONTACT FORM **********/
