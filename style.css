@@ -541,9 +541,17 @@ div.item.not-empty {
     padding: 0 100px;
 }
 
-#contact p#errorOutput {
+#contact div#errorOutput {
     font-size: 0.8rem;
     color: red;
+}
+
+#errorList.li {
+    list-style: none;
+}
+
+.no-error {
+    display: none;
 }
 
 .required::after {

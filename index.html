@@ -12,7 +12,7 @@
         <title>Bullrun Brewery</title>
     </head>
     <body>
-        <header>
+        <header href="home">
             <img src="Icons/lightModePink.svg" alt="Bullrun Brewery primary logo" id="lightModeLogo">
             <img src="Icons/darkModePink.svg" alt="Bullrun Brewery primary logo" class="hidden" id="darkModeLogo">
             <nav>
@@ -223,8 +223,12 @@
                 <h2>Contact Us</h2>
                 <p>Have a question or want to leave us a comment? Interested in working with us for an event or want to work for <span class="bullrun-brewery"> Bullrun Brewery</span>?</p>
                 <p>Fill out the form below! We would love to talk you more about it. We'll get back to you within 48 hours. Promise!</p>
-                <form>
-                    <p id="errorOutput"></p>
+                <form id="form">
+                    <div id="errorOutput">
+                        <ul id="errorList">
+                            <!-- Uses js form validation to list form errors here -->
+                        </ul>
+                    </div>
                     <label for="first" class="required">First name</label>
                     <input type="text" id="first" name="first" placeholder="Required">
 
@@ -242,14 +246,14 @@
                     </fieldset>
 
 
-                    <label for="email">Email</label>
+                    <label for="email" id="emailLabel" class="required">Email</label>
                     <input type="email" id="email" name="email" placeholder="myemail@gmail.com">
 
-                    <label for="phone">Phone</label>
-                    <input type="tel" id="phone" name="phone" placeholder="(###) ### - ####">
+                    <label for="phone" id="phoneLabel">Phone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="(###) ### - ####" min-length="0" max-length="10" size="10">
 
-                    <label for="comments" class="required">Comments & questions</label>
-                    <textarea name="comments" rows="7" cols="30" placeholder="What can we do for you? Give it to us straight. The more details the better!" min-length="10" max-length="1000"></textarea>
+                    <label for="comments" >Comments & questions</label>
+                    <textarea name="comments" rows="7" cols="30" placeholder="What can we do for you? Give it to us straight. The more details the better!" min-length="20" max-length="1000"></textarea>
 
                     <div id="formButtons">
                         <input type="reset" value="Clear form" id="clearForm">
