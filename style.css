@@ -541,6 +541,11 @@ div.item.not-empty {
     padding: 0 100px;
 }
 
+.required::after {
+    content: "  *";
+    color: red;
+}
+
 #contact form {
     padding-top: 40px;
     padding-left: 60px;

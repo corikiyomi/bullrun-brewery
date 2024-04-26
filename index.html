@@ -224,14 +224,14 @@
                 <p>Have a question or want to leave us a comment? Interested in working with us for an event or want to work for <span class="bullrun-brewery"> Bullrun Brewery</span>?</p>
                 <p>Fill out the form below! We would love to talk you more about it. We'll get back to you within 48 hours. Promise!</p>
                 <form>
-                    <label for="first">First name</label>
+                    <label for="first" class="required">First name</label>
                     <input type="text" id="first" name="first" placeholder="Required" required>
 
-                    <label for="last">Last name</label>
+                    <label for="last" class="required">Last name</label>
                     <input type="text" id="last" name="last" placeholder="Required" required>
 
                     <fieldset>
-                        <legend>Preferred Contact Method</legend>
+                        <legend class="required">Preferred Contact Method</legend>
                         <input type="radio" id="emailPreferred" name="preferred" value="email" checked>
                         <label for="emailPreferred" class="radio-label">Email</label>
                         <input type="radio" id="callPreferred" name="preferred" value="call">
@@ -247,8 +247,8 @@
                     <label for="phone">Phone</label>
                     <input type="tel" id="phone" name="phone" placeholder="(###) ### - ####">
 
-                    <label for="comments">Comments & questions</label>
-                    <textarea name="comments" rows="7" cols="30" placeholder="What can we do for you? Give it to us straight. The more details the better!"></textarea>
+                    <label for="comments" class="required">Comments & questions</label>
+                    <textarea name="comments" rows="7" cols="30" placeholder="What can we do for you? Give it to us straight. The more details the better!" required min-length="10" max-length="1000"></textarea>
 
                     <div id="formButtons">
                         <input type="reset" value="Clear form" id="clearForm">

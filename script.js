@@ -324,9 +324,9 @@ let totalOutput = document.getElementById("total");
 
 function calculateCost () {
     let itemID = [];
-    let subtotal = 0;
-    let taxes = 0;
-    let total = 0;
+    subtotal = 0;
+    taxes = 0;
+    total = 0;
 
     // Calculate Subtotal
     let a1 = /^a1/;
@@ -372,10 +372,17 @@ function calculateCost () {
 
     // Calculate Total
     total = parseFloat(subtotal) + parseFloat(taxes);
+    total = total.toFixed(2);
     // display the total in p
     document.getElementById("total").innerHTML = `$ ${total}`;
 }; 
 
+
+
+// CHECKOUT CART
+function submitCart() {
+    window.alert(`Thank you for shopping at Bullrun Brewery! \n\nYour total was $${total}.\n\nClose this window and keep browsing with us!`)
+}
 
 
 
@@ -440,4 +447,4 @@ cartBtns.forEach(cartBtn => {
 
 // Clear / Submit Shopping Cart
 document.getElementById("cartReset").addEventListener("click", clearCart);
-// document.getElementById("cartSubmit").addEventListener("click", submitCart);
+document.getElementById("cartSubmit").addEventListener("click", submitCart);
