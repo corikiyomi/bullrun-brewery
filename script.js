@@ -393,6 +393,7 @@ let fnameIsValid = false;
 let lnameIsValid = false;
 let emailIsValid = false;
 let phoneIsValid = false;
+let commentsValid = false;
 
 let fname = document.getElementById("first");
 let lname = document.getElementById("last");
@@ -489,6 +490,21 @@ function formValid(e) {
         ul.appendChild(emailError);
     }
 
+    // comments
+    try {
+        if (comments.value.length == 0) {
+            invalidInputs.push(comments);
+            throw new Error("Comments are required.");
+        } else {
+            comments.classList.add("no-error");
+            commentsValid = true;
+        }
+    } catch(error) {
+        let commentError = document.createElement("li");
+        commentError.innerHTML = error.message;
+        ul.appendChild(commentError);
+    }
+
     // if no errors exist
     if (invalidInputs.length == 0) {
         errorOutput.classList.add("no-error");
@@ -501,7 +517,7 @@ function formValid(e) {
     }
 
     // check if all fields are valid
-    if (fnameIsValid && lnameIsValid) {
+    if (fnameIsValid && lnameIsValid && commentsValid) {
         if (emailIsValid || phoneIsValid) {
         formIsValid = true;
         }
@@ -517,10 +533,10 @@ function formValid(e) {
 function submitForm() {
     // If form is valid and submit button is clicked:
     if (formIsValid) {
-        // Display a message thanking the user for submitting in alert window
-        window.alert(`Thank you for submitting your form. You'll be hearing from us soon!\n\nYou still have items in your cart! Don't forget about them.`);
         // If there are items in the shopping cart, return to Products section
         if (shoppingCart.length !== 0) {
+            // Display a message thanking the user for submitting in alert window
+            window.alert(`Thank you for submitting your form. You'll be hearing from us soon!\n\nYou still have items in your cart! Don't forget about them.`);
             window.document.location.href = "#products";
         } else {  // If there are no items in the shopping cart, reload the page to the top
             // Display a message thanking the user for submitting in alert window
