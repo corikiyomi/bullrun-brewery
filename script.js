@@ -374,7 +374,7 @@ function calculateCost () {
     total = parseFloat(subtotal) + parseFloat(taxes);
     // display the total in p
     document.getElementById("total").innerHTML = `$ ${total}`;
-};
+}; 
 
 
 
