@@ -80,7 +80,6 @@ function addBlackShirtToCart() {
         newItem.appendChild(p);
         newItem.appendChild(itemPrice);
         document.getElementById("itemsAdded").appendChild(newItem);
-        console.log(newItem);
         // Add self to shoppingCart list for cost calculation
         shoppingCart.push(myItem);
         // Uncheck item
@@ -115,7 +114,6 @@ function addWhiteShirtToCart() {
         newItem.appendChild(p);
         newItem.appendChild(itemPrice);
         document.getElementById("itemsAdded").appendChild(newItem);
-        console.log(newItem);
         shoppingCart.push(myItem);
         myItem.checked = false;
     }
@@ -147,7 +145,6 @@ function addBlackHoodieToCart() {
         newItem.appendChild(p);
         newItem.appendChild(itemPrice);
         document.getElementById("itemsAdded").appendChild(newItem);
-        console.log(newItem);
         shoppingCart.push(myItem);
         myItem.checked = false;
     }
@@ -179,7 +176,6 @@ function addWhiteHoodieToCart() {
         newItem.appendChild(p);
         newItem.appendChild(itemPrice);
         document.getElementById("itemsAdded").appendChild(newItem);
-        console.log(newItem);
         shoppingCart.push(myItem);
         myItem.checked = false;
     }
@@ -326,13 +322,59 @@ let taxesOutput = document.getElementById("taxes");
 let total;
 let totalOutput = document.getElementById("total");
 
-// if shopping cart has items, create a for loop that gets the price of each item and adds them up to output in the subtotal p
-    // if subtotal value is not 0, multiply subtotal by 5.6% and output to taxes p
+function calculateCost () {
+    let itemID = [];
+    let subtotal = 0;
+    let taxes = 0;
+    let total = 0;
 
-    // if subtotal is not 0, add subtotal + taxes and output to total
+    // Calculate Subtotal
+    let a1 = /^a1/;
+    let a2 = /^a2/;
+    let a3 = /^a3/;
+    let a4 = /^a4/;
+    // for each element in shoppingCart at index i, get item.id and add to itemID array;
+    for (let i = 0; i < shoppingCart.length; i++) {
+        itemID.push(shoppingCart[i].id);
+    }; 
+    // on each add to cart button click, get the new sum and replace the sum by zeroing out the sum at the top of the function each time it runs;
+    for (let i = 0; i < itemID.length; i++) {
+        if (a1.test(itemID[i])) {
+            subtotal = subtotal + 22;
+        } else if (a2.test(itemID[i])) {
+            subtotal = subtotal + 22;
+        } else if (a3.test(itemID[i])) {
+            subtotal = subtotal + 35;
+        } else if (a4.test(itemID[i])) {
+            subtotal = subtotal + 35;
+        } else if (itemID[i] == "drinkware1") {
+            subtotal = subtotal + 14;
+        } else if (itemID[i] == "drinkware2") {
+            subtotal = subtotal + 12;
+        } else if (itemID[i] == "drinkware3") {
+            subtotal = subtotal + 35;
+        } else if (itemID[i] == "accessories1") {
+            subtotal = subtotal + 2;
+        } else if (itemID[i] == "accessories2") {
+            subtotal = subtotal + 12;
+        } else if (itemID[i] == "accessories3") {
+            subtotal = subtotal + 15;
+        }
+    };
+    // display the sum in the p
+    document.getElementById("subtotal").innerHTML = `$ ${subtotal}`;
 
+    // Calculate Taxes
+    taxes = subtotal * 0.056;
+    taxes = taxes.toFixed(2);
+    // display the taxes in p
+    document.getElementById("taxes").innerHTML = `$ ${taxes}`;
 
-
+    // Calculate Total
+    total = parseFloat(subtotal) + parseFloat(taxes);
+    // display the total in p
+    document.getElementById("total").innerHTML = `$ ${total}`;
+};
 
 
 
@@ -388,6 +430,13 @@ document.getElementById("addGrowler").addEventListener("click", addGrowlerToCart
 document.getElementById("addSticker").addEventListener("click", addStickerToCart);
 document.getElementById("addDadHat").addEventListener("click", addDadHatToCart);
 document.getElementById("addPanelHat").addEventListener("click", addPanelHatToCart);
+
+// Cost Calculator
+// // Add event listener to all Add to Cart buttons on the page
+let cartBtns = document.querySelectorAll("button[class=add-to-cart]");
+cartBtns.forEach(cartBtn => {
+    cartBtn.addEventListener("click", calculateCost);
+});
 
 // Clear / Submit Shopping Cart
 document.getElementById("cartReset").addEventListener("click", clearCart);
