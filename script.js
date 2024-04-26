@@ -297,21 +297,39 @@ function addPanelHatToCart() {
 // Clear Cart
 function clearCart() {
     document.getElementById("itemsAdded").innerHTML = "";
+    // create new div class=item, id=empty
+    let newDiv = document.createElement("div");
+    newDiv.classList.add("item");
+    newDiv.setAttribute("id", "empty");
+    // create text node Your cart is empty.
+    let emptyCartMessage = document.createTextNode("Your cart is empty.");
+    // create p element, append node
     let p = document.createElement("p");
-    let cartMessage = document.createTextNode("Your cart is empty.");
-    p.appendChild(cartMessage);
-    document.getElementById("itemsAdded").appendChild(p);
-    shoppingCart = [];
+    p.appendChild(emptyCartMessage);
+    // append p to div
+    newDiv.appendChild(p);
+    // append new div to itemsAdded div
+    document.getElementById("itemsAdded").appendChild(newDiv);
+    // Zero out totals
+    document.getElementById("subtotal").innerHTML = "$ 0";
+    document.getElementById("taxes").innerHTML = "$ 0";
+    document.getElementById("total").innerHTML = "$ 0";
 }
 
 // COST CALCULATOR
 
 // Adjust subtotal, taxes, and total cost on click
 let subtotal;
+let subtotalOutput = document.getElementById("subtotal");
+let taxes;
+let taxesOutput = document.getElementById("taxes");
+let total;
+let totalOutput = document.getElementById("total");
 
+// if shopping cart has items, create a for loop that gets the price of each item and adds them up to output in the subtotal p
+    // if subtotal value is not 0, multiply subtotal by 5.6% and output to taxes p
 
-
-// if shopping cart has items, create a
+    // if subtotal is not 0, add subtotal + taxes and output to total
 
 
 
