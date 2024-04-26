@@ -14,24 +14,24 @@
 
     <body>
         <header>
-            <img src="Icons/lightModePink.svg" alt="Bullrun Brewery primary logo">
+            <img src="Icons/lightModePink.svg" alt="Bullrun Brewery primary logo" id="lightModeLogo">
+            <img src="Icons/darkModePink.svg" alt="Bullrun Brewery primary logo" class="hidden" id="darkModeLogo">
             <nav>
                 <ul>
-                    <li><a href=#>Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#products">Shop</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#products" class="nav-link">Shop</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
                 </ul>
             </nav>
+
             <!-- Toggle switch between Light and Dark mode -->
-            <button id="lightDarkMode">
-                <img src="/Icons/sun.svg" alt="light mode icon" class="hidden" id="sun">
-                <img src="/Icons/moon.svg" alt="dark mode icon" id="moon">
-            </button>
+            <input type="checkbox" id="lightDarkMode" class="switchMode" name="switchMode"><label for="lightDarkMode" id="switchModeIcon"><img src="Icons/moon.svg"><img src="Icons/sun.svg" id="sun" class="hidden"></label>
+
         </header>
 
         <main>
-            <h1><span class=semibold>Run</span> with the <span class=bold>bulls</span></h1>
+            <h1><span class="semibold">Run</span> with the <span class="bold">bulls</span></h1>
 
             <section id="hero">
                 <video width="1280" height="640" autoplay loop muted>
