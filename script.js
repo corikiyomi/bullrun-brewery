@@ -289,8 +289,19 @@ function addPanelHatToCart() {
     shoppingCart.push(panelHat);
 }
 
+// COST CALCULATOR
+
+// Adjust subtotal, taxes, and total cost on click
+let subtotal;
+let subtotalOutput = document.getElementById("subtotal");
+let taxes;
+let taxesOutput = document.getElementById("taxes");
+let total;
+let totalOutput = document.getElementById("total");
+
 // Clear Cart
 function clearCart() {
+    subtotal = 0;
     document.getElementById("itemsAdded").innerHTML = "";
     // create new div class=item, id=empty
     let newDiv = document.createElement("div");
@@ -310,16 +321,6 @@ function clearCart() {
     document.getElementById("taxes").innerHTML = "$ 0";
     document.getElementById("total").innerHTML = "$ 0";
 }
-
-// COST CALCULATOR
-
-// Adjust subtotal, taxes, and total cost on click
-let subtotal;
-let subtotalOutput = document.getElementById("subtotal");
-let taxes;
-let taxesOutput = document.getElementById("taxes");
-let total;
-let totalOutput = document.getElementById("total");
 
 function calculateCost () {
     let itemID = [];
