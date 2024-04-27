@@ -292,42 +292,16 @@ function addPanelHatToCart() {
 // COST CALCULATOR
 
 // Adjust subtotal, taxes, and total cost on click
-let subtotal;
 let subtotalOutput = document.getElementById("subtotal");
-let taxes;
 let taxesOutput = document.getElementById("taxes");
-let total;
 let totalOutput = document.getElementById("total");
 
-// Clear Cart
-function clearCart() {
-    subtotal = 0;
-    document.getElementById("itemsAdded").innerHTML = "";
-    // create new div class=item, id=empty
-    let newDiv = document.createElement("div");
-    newDiv.classList.add("item");
-    newDiv.setAttribute("id", "empty");
-    // create text node Your cart is empty.
-    let emptyCartMessage = document.createTextNode("Your cart is empty.");
-    // create p element, append node
-    let p = document.createElement("p");
-    p.appendChild(emptyCartMessage);
-    // append p to div
-    newDiv.appendChild(p);
-    // append new div to itemsAdded div
-    document.getElementById("itemsAdded").appendChild(newDiv);
-    // Zero out totals
-    document.getElementById("subtotal").innerHTML = "$ 0";
-    document.getElementById("taxes").innerHTML = "$ 0";
-    document.getElementById("total").innerHTML = "$ 0";
-}
+let itemID = [];
+let subtotal = 0;
+let taxes = 0;
+let total = 0;
 
 function calculateCost () {
-    let itemID = [];
-    let subtotal = 0;
-    let taxes = 0;
-    let total = 0;
-
     // Calculate Subtotal
     let a1 = /^a1/;
     let a2 = /^a2/;
@@ -376,6 +350,30 @@ function calculateCost () {
     document.getElementById("total").innerHTML = `$ ${total}`;
 }; 
 
+// CLEAR CART
+function clearCart() {
+    subtotal = 0;
+    taxes = 0;
+    total = 0;
+    document.getElementById("itemsAdded").innerHTML = "";
+    // create new div class=item, id=empty
+    let newDiv = document.createElement("div");
+    newDiv.classList.add("item");
+    newDiv.setAttribute("id", "empty");
+    // create text node Your cart is empty.
+    let emptyCartMessage = document.createTextNode("Your cart is empty.");
+    // create p element, append node
+    let p = document.createElement("p");
+    p.appendChild(emptyCartMessage);
+    // append p to div
+    newDiv.appendChild(p);
+    // append new div to itemsAdded div
+    document.getElementById("itemsAdded").appendChild(newDiv);
+    // Zero out totals
+    document.getElementById("subtotal").innerHTML = "$ 0";
+    document.getElementById("taxes").innerHTML = "$ 0";
+    document.getElementById("total").innerHTML = "$ 0";
+}
 
 
 // CHECKOUT CART
