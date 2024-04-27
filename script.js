@@ -323,9 +323,9 @@ let totalOutput = document.getElementById("total");
 
 function calculateCost () {
     let itemID = [];
-    subtotal = 0;
-    taxes = 0;
-    total = 0;
+    let subtotal = 0;
+    let taxes = 0;
+    let total = 0;
 
     // Calculate Subtotal
     let a1 = /^a1/;
@@ -371,7 +371,6 @@ function calculateCost () {
 
     // Calculate Total
     total = parseFloat(subtotal) + parseFloat(taxes);
-    total = total.toFixed(2);
     // display the total in p
     document.getElementById("total").innerHTML = `$ ${total}`;
 }; 
