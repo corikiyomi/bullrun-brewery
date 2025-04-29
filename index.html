@@ -247,13 +247,13 @@
 
 
                     <label for="email" id="emailLabel" class="required">Email</label>
-                    <input type="email" id="email" name="email" placeholder="myemail@gmail.com">
+                    <input type="email" id="email" name="email" placeholder="myemail@gmail.com" autocomplete="on">
 
                     <label for="phone" id="phoneLabel">Phone</label>
-                    <input type="tel" id="phone" name="phone" placeholder="(###) ### - ####" size="10">
+                    <input type="tel" id="phone" name="phone" autocomplete="on" placeholder="(###) ### - ####" size="10">
 
                     <label for="comments" class="required" >Comments & questions</label>
-                    <textarea name="comments" rows="7" cols="30" placeholder="What can we do for you? Give it to us straight. The more details the better!" required minlength="20" maxlength="1000"></textarea>
+                    <textarea id="comments" name="comments" rows="7" cols="30" placeholder="What can we do for you? Give it to us straight. The more details the better!" required minlength="20" maxlength="1000"></textarea>
 
                     <div id="formButtons">
                         <input type="reset" value="Clear form" id="clearForm">
