@@ -1,5 +1,8 @@
 {
     "cSpell.words": [
         "hoppy"
-    ]
+    ],
+    "liveServer.settings.ignoreFiles":[
+        "**"
+    ],
 }

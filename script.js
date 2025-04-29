@@ -303,6 +303,11 @@ let total = 0;
 
 function calculateCost () {
     // Calculate Subtotal
+    itemID = [];
+    subtotal = 0;
+    taxes = 0;
+    total = 0;
+    
     let a1 = /^a1/;
     let a2 = /^a2/;
     let a3 = /^a3/;
@@ -355,6 +360,10 @@ function clearCart() {
     subtotal = 0;
     taxes = 0;
     total = 0;
+    itemID = [];
+    shoppingCart = [];
+    subtotal = 0;
+
     document.getElementById("itemsAdded").innerHTML = "";
     // create new div class=item, id=empty
     let newDiv = document.createElement("div");
