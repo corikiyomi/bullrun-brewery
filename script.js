@@ -355,6 +355,9 @@ function clearCart() {
     subtotal = 0;
     taxes = 0;
     total = 0;
+    itemID = [];
+    shoppingCart = [];
+
     document.getElementById("itemsAdded").innerHTML = "";
     // create new div class=item, id=empty
     let newDiv = document.createElement("div");

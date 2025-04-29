@@ -112,7 +112,7 @@ nav ul li a:visited {
 #switchModeIcon img:last-of-type {
     z-index: 1;
     position: absolute;
-    right: 75px;
+    right: 60px;
 }
 
 #switchModeIcon img:hover {
