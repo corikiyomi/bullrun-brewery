@@ -209,15 +209,30 @@ h1 {
 /************* FAVORITE BREWS *************/
 
 #favorites {
-    padding-top: 2.5rem;
+    padding: 2.5rem 4rem 2.5rem 4rem;
 }
+
+#favorites img {
+    width: 200px;
+}
+
 #favorites h2 {
     text-align: center;
     font-family: "Orbitron";
     font-size: 2.5rem;
     font-weight: 500;
-    text-decoration: underline 6px solid #FF004C;
+    /* text-decoration: underline 6px solid #FF004C; */
 }
+
+.brew {
+    text-align: left;
+    font-family: 'PolySans', Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: #1A1A1A;
+    background-color: #F0F0F0;
+    text-decoration: none!important;
+}
+
 
 
 /************* PRODUCT DISPLAY SECTION **************/

@@ -49,8 +49,7 @@ $(function() {
     let brews = `${endpoint}`;
     $.getJSON(brews, function(data){
         // 'data' is the JSON object -- loop through data and format html
-
-
+        displayFavorites(data);
         console.log(data);
         // Populate data into section
 
@@ -62,11 +61,16 @@ $(function() {
 });
 
 function displayFavorites(data) {
-    let string = "";
+    let string = `<h2>Some of our current favorite brews<?h2>`;
     for (let beer of data) {
         string +=
-            `<`
+            `<div class="brew" id="${beer.sku}">
+            <img src="${beer.image}" alt="${beer.name}">
+            <h3>${beer.name}</h3>
+            <p>${beer.description}</p>
+            </div>`
     }
+    document.getElementById("favorites").innerHTML += string;
 }
 
 // PRODUCTS
