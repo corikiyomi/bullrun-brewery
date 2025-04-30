@@ -43,6 +43,31 @@ window.addEventListener("scroll", e => {
 })
 
 
+// FAVORITE BREWS SECTION
+$(function() {
+    let endpoint = "./brews.json";
+    let brews = `${endpoint}`;
+    $.getJSON(brews, function(data){
+        // 'data' is the JSON object -- loop through data and format html
+
+
+        console.log(data);
+        // Populate data into section
+
+
+
+    }).fail(function(){
+        console.log("An error has occurred.");
+    });
+});
+
+function displayFavorites(data) {
+    let string = "";
+    for (let beer of data) {
+        string +=
+            `<`
+    }
+}
 
 // PRODUCTS
 let shoppingCart = []; // all items in cart
