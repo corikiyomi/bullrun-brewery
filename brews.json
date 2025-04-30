@@ -1,0 +1,62 @@
+[
+    {
+        "sku": "10001",
+        "name":  "Night Terror",
+        "brewery": "Bullrun Brewery",
+        "category": "beer",
+        "sub_category_1": "Imperial",
+        "sub_category_2": "Stout",
+        "sub_category_3": "",
+        "description": "Born in the shadows of the San Francisco Peaks, Night Terror is Bullrun Brewery's boldest creation—a hauntingly smooth imperial stout brewed in Flagstaff, Arizona. Layered with rich dark chocolate, roasted coffee, and a touch of smoked mesquite, it captures the chill of mountain nights and the depth of true darkness.",
+        "image": "",
+        "region": "Arizona",
+        "country": "United States",
+        "ABV": "13.40%",
+        "IBU": "16"
+    },
+    {
+        "sku": "10002",
+        "name":  "Cloudsplitter",
+        "brewery": "Bullrun Brewery",
+        "category": "beer",
+        "sub_category_1": "Ale",
+        "sub_category_2": "IPA",
+        "sub_category_3": "Hazy IPA",
+        "description": "Cloudsplitter pours a golden haze packed with juicy bursts of Citra, Mosaic, and Galaxy hops. Tropical aromas lead into a soft, pillowy mouthfeel and a lingering citrus punch. It's as bold as the storms and as chill as the mountain breeze that follows.",
+        "image": "",
+        "region": "Arizona",
+        "country": "United States",
+        "ABV": "6.00%",
+        "IBU": "67"
+    },
+    {
+        "sku": "10003",
+        "name":  "Trailhead",
+        "brewery": "Bullrun Brewery",
+        "category": "beer",
+        "sub_category_1": "American",
+        "sub_category_2": "Lager",
+        "sub_category_3": "",
+        "description": "Clean, crisp, and brewed for basecamp, Trailhead is Bullrun's classic lager—cold-fermented and perfectly balanced with a subtle hop snap. Whether you're hiking the pines or kicking back fireside, it's a refreshing reward after any climb. Simple. Reliable. Trail-ready.",
+        "image": "",
+        "region": "Arizona",
+        "country": "United States",
+        "ABV": "4.60%",
+        "IBU": "13"
+    },
+    {
+        "sku": "10004",
+        "name":  "Sunspill",
+        "brewery": "Bullrun Brewery",
+        "category": "beer",
+        "sub_category_1": "Sour",
+        "sub_category_2": "Wild Ale",
+        "sub_category_3": "",
+        "description": "Brewed under clear mountain skies, Sunspill is a golden sour ale bursting with zesty citrus and sun-ripened peach. Its bright acidity and effervescent finish make every sip feel like a splash of Arizona sunshine. Perfect for trail-end toasts and rooftop sunsets alike.",
+        "image": "",
+        "region": "Arizona",
+        "country": "United States",
+        "ABV": "5.50%",
+        "IBU": "7"
+    }
+]
