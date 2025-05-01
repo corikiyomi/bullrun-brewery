@@ -47,7 +47,6 @@ nav {
 nav ul {
     display: flex;
     list-style: none;
-    padding-left: 100px;
 }
 
 nav ul li {
@@ -55,7 +54,7 @@ nav ul li {
     font-size: 1rem;
     font-weight: 500;
     color: #1A1A1A;
-    padding-right: 72px;
+    padding-right: 60px;
 }
 
 nav a {
@@ -209,11 +208,29 @@ h1 {
 /************* FAVORITE BREWS *************/
 
 #favorites {
-    padding: 2.5rem 4rem 2.5rem 4rem;
+    padding: 2.5rem 0rem 2.5rem 4rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 50px;
+    text-align: center;
+    overflow-x: scroll;
 }
 
 #favorites img {
-    width: 200px;
+    width: 310px;
+    grid-column: 1 / span 1;
+}
+
+.brew {
+    text-align: left;
+    font-family: 'PolySans', Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    text-align: justify;
+    padding: 150px 10px 0 10px;
+}
+
+.brew:last-of-type {
+    padding-right: 75px;
 }
 
 #favorites h2 {
@@ -221,18 +238,38 @@ h1 {
     font-family: "Orbitron";
     font-size: 2.5rem;
     font-weight: 500;
-    /* text-decoration: underline 6px solid #FF004C; */
+    text-decoration: underline 6px solid #FF004C;
+    padding-top: 3rem;
+    padding-bottom: 2rem;
+    margin: 0;
+    /* grid-row: 1;
+    grid-column: 1 / span 4; */
+    position: absolute;
+    right: 210px;
 }
 
-.brew {
-    text-align: left;
-    font-family: 'PolySans', Arial, Helvetica, sans-serif;
-    font-size: 18px;
-    color: #1A1A1A;
-    background-color: #F0F0F0;
-    text-decoration: none!important;
+#favorites h3 {
+    font-size: 1.5rem;
+    font-family: "Orbitron";
+    text-transform: uppercase;
 }
 
+#favorites::-webkit-scrollbar {
+    width: 30px;
+}
+
+#favorites::-webkit-scrollbar-track {
+    background: #FF004C;
+}
+
+#favorites::-webkit-scrollbar-thumb {
+    background: #1A1A1A;
+}
+
+#favorites::-webkit-scrollbar-thumb:hover {
+    background: #222222;
+    cursor: pointer;
+}
 
 
 /************* PRODUCT DISPLAY SECTION **************/
@@ -268,7 +305,6 @@ h1 {
 
 .product-type {
     padding-left: 75px;
-    /* padding-right: 75px; */
     grid-column: 1 / 5;
     display: flex;
     flex-direction: row;
@@ -736,7 +772,7 @@ ul.footer-nav {
 
 ul.footer-nav li {
     list-style: none;
-    padding: 10px 15px;
+    padding: 10px 10px;
 }
 
 ul.footer-nav li a {
@@ -759,4 +795,3 @@ div#copyright {
 div#copyright p {
     padding: 10px;
 }
-
