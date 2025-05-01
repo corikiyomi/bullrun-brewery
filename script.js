@@ -31,6 +31,9 @@ function changeMode() {
     for (let i = 0; i < sizeButtons.length; i++) {
         sizeButtons[i].classList.toggle("dark-bg-button");
     }
+    // Favorites section scrollbar change color
+    let scrollbar = document.querySelector("#favorites::-webkit-scrollbar-thumb");
+    scrollbar.style.background = "#F0F0F0";
 }
 
 
@@ -43,6 +46,35 @@ window.addEventListener("scroll", e => {
 })
 
 
+// FAVORITE BREWS SECTION
+$(function() {
+    let endpoint = "./brews.json";
+    let brews = `${endpoint}`;
+    $.getJSON(brews, function(data){
+        // 'data' is the JSON object -- loop through data and format html
+        displayFavorites(data);
+        console.log(data);
+        // Populate data into section
+
+
+
+    }).fail(function(){
+        console.log("An error has occurred.");
+    });
+});
+
+function displayFavorites(data) {
+    let string = `<h2>Some of our current favorite brews</h2>`;
+    for (let beer of data) {
+        string +=
+            `<div class="brew" id="${beer.sku}">
+            <img src="${beer.image}" alt="${beer.name}">
+            <h3>${beer.name}</h3>
+            <p>${beer.description}</p>
+            </div>`
+    }
+    document.getElementById("favorites").innerHTML += string;
+}
 
 // PRODUCTS
 let shoppingCart = []; // all items in cart

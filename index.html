@@ -8,6 +8,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         
         <title>Bullrun Brewery</title>
     </head>
@@ -18,6 +19,7 @@
             <nav>
                 <ul>
                     <li><a href="#" class="nav-link">Home</a></li>
+                    <li><a href="#favorites" class="nav-link">Our Beer</a></li>
                     <li><a href="#about" class="nav-link">About</a></li>
                     <li><a href="#products" class="nav-link">Shop</a></li>
                     <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -47,6 +49,10 @@
                     <p>But Bullrun is more than beer — it's a haven for camaraderie and adventure. Join us and become part of our story of passion, perseverance, and the vibrant spirit of the Northern Arizona mountains.</p>
                     <p>Cheers!</p>
                 </div>
+            </section>
+
+            <section id="favorites">
+                <!-- Using jQuery to populate from brews.json -->
             </section>
 
             <section id="products">
@@ -247,13 +253,13 @@
 
 
                     <label for="email" id="emailLabel" class="required">Email</label>
-                    <input type="email" id="email" name="email" placeholder="myemail@gmail.com">
+                    <input type="email" id="email" name="email" placeholder="myemail@gmail.com" autocomplete="on">
 
                     <label for="phone" id="phoneLabel">Phone</label>
-                    <input type="tel" id="phone" name="phone" placeholder="(###) ### - ####" size="10">
+                    <input type="tel" id="phone" name="phone" autocomplete="on" placeholder="(###) ### - ####" size="10">
 
                     <label for="comments" class="required" >Comments & questions</label>
-                    <textarea name="comments" rows="7" cols="30" placeholder="What can we do for you? Give it to us straight. The more details the better!" required minlength="20" maxlength="1000"></textarea>
+                    <textarea id="comments" name="comments" rows="7" cols="30" placeholder="What can we do for you? Give it to us straight. The more details the better!" required minlength="20" maxlength="1000"></textarea>
 
                     <div id="formButtons">
                         <input type="reset" value="Clear form" id="clearForm">
@@ -267,6 +273,7 @@
             <img src="Icons/darkModePink.svg" alt="">
             <ul class="footer-nav">
                 <li><a href=#>Home</a></li>
+                <li><a href="#favorites">Our Beer</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#products">Shop</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -278,8 +285,8 @@
                 <li><a href=#><img src="Icons/tiktok.svg" alt="tiktok icon"></a></li>
             </ul>
             <div id="copyright">
-                <p>Copyright &copy; 2024</p>
-                <p>By Cori Komiyama</p>
+                <p>Copyright &copy; 2025</p>
+                <p>By Cori Ulrich</p>
                 <p>For education purposes only</p>
             </div>
         </footer>
