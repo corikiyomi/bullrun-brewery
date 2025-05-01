@@ -263,7 +263,8 @@ h1 {
 }
 
 #favorites::-webkit-scrollbar-thumb {
-    background: #1A1A1A;
+    background: #fff;
+    border-style: 1px solid #FF004C;
 }
 
 #favorites::-webkit-scrollbar-thumb:hover {
