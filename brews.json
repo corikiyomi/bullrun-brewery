@@ -8,7 +8,7 @@
         "sub_category_2": "Stout",
         "sub_category_3": "",
         "description": "Born in the shadows of the San Francisco Peaks, Night Terror is Bullrun Brewery's boldest creation—a hauntingly smooth imperial stout brewed in Flagstaff, Arizona. Layered with rich dark chocolate, roasted coffee, and a touch of smoked mesquite, it captures the chill of mountain nights and the depth of true darkness.",
-        "image": "./Images/brews/nightTerror_mockup.png",
+        "image": "./Images/brews/nightTerror_mockup2.png",
         "region": "Arizona",
         "country": "United States",
         "ABV": "13.40%",
@@ -58,5 +58,35 @@
         "country": "United States",
         "ABV": "5.50%",
         "IBU": "7"
+    },
+    {
+        "sku": "10005",
+        "name":  "Highpine",
+        "brewery": "Bullrun Brewery",
+        "category": "beer",
+        "sub_category_1": "American",
+        "sub_category_2": "Lager",
+        "sub_category_3": "Pilsner",
+        "description": "Crisp, clean, and brewed with glacier-fed water from the San Francisco Peaks, Highpine Pilsner is a refreshing nod to alpine adventure. Subtle floral hops and a smooth malt backbone make it the perfect post-hike companion. Crafted for clarity and crushability, it's your reward at the summit.",
+        "image": "./Images/brews/highpine_mockup.png",
+        "region": "Arizona",
+        "country": "United States",
+        "ABV": "4.70%",
+        "IBU": "19"
+    },
+    {
+        "sku": "10006",
+        "name":  "Monsoon",
+        "brewery": "Bullrun Brewery",
+        "category": "beer",
+        "sub_category_1": "Belgian",
+        "sub_category_2": "Ale",
+        "sub_category_3": "Saison",
+        "description": "Monsoon is a vibrant farmhouse ale that bursts with notes of white pepper, lemon zest, and wildflowers. Fermented with native yeast and brewed seasonally, it captures the fleeting drama of Arizona's summer storms. Earthy, effervescent, and a little untamed.",
+        "image": "./Images/brews/monsoon_mockup2.png",
+        "region": "Arizona",
+        "country": "United States",
+        "ABV": "6.20%",
+        "IBU": "25"
     }
 ]

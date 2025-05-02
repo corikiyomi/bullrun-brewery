@@ -30,10 +30,7 @@ function changeMode() {
     // Shop size link background color
     for (let i = 0; i < sizeButtons.length; i++) {
         sizeButtons[i].classList.toggle("dark-bg-button");
-    }
-    // Favorites section scrollbar change color
-    let scrollbar = document.querySelector("#favorites::-webkit-scrollbar-thumb");
-    scrollbar.style.background = "#F0F0F0";
+    }    
 }
 
 
@@ -64,7 +61,7 @@ $(function() {
 });
 
 function displayFavorites(data) {
-    let string = `<h2>Some of our current favorite brews</h2>`;
+    let string = `<h2>Our current lineup</h2>`;
     for (let beer of data) {
         string +=
             `<div class="brew" id="${beer.sku}">
