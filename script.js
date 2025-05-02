@@ -43,7 +43,7 @@ window.addEventListener("scroll", e => {
 })
 
 
-// FAVORITE BREWS SECTION
+// OUR BREWS SECTION
 $(function() {
     let endpoint = "./brews.json";
     let brews = `${endpoint}`;
@@ -76,6 +76,22 @@ function displayFavorites(data) {
 // PRODUCTS
 let shoppingCart = []; // all items in cart
 let selected = []; // specific to each item
+let cartItems = []; // local storage cart array
+
+
+// LOCAL STORAGE -- STORE SHOPPING CART IN LOCAL STORAGE
+function saveToCart(item) {
+    // Initialize local storage list to hold items or if it's not empty, add items to it as they are added to shopping cart
+    if (localStorage.getItem("cart")) {
+        // Cart already exists - add item to array
+        cartItems.push(item);
+        // Update the list in storage by using a join on the array
+        localStorage.cart = cartItems.join(",");
+    } else {
+        // Cart does not already exist
+        localStorage.setItem("cart", item);
+    }
+}
 
 // When size is selected and Add to Cart button is clicked, add quantity 1 for each size selected to the cart / cost calculator with the corresponding price.
 
@@ -110,6 +126,8 @@ function addBlackShirtToCart() {
         document.getElementById("itemsAdded").appendChild(newItem);
         // Add self to shoppingCart list for cost calculation
         shoppingCart.push(myItem);
+        // Add myItem to local storage cart array
+        saveToCart(myItem.id);
         // Uncheck item
         myItem.checked = false;
     }
@@ -143,6 +161,7 @@ function addWhiteShirtToCart() {
         newItem.appendChild(itemPrice);
         document.getElementById("itemsAdded").appendChild(newItem);
         shoppingCart.push(myItem);
+        saveToCart(myItem.id)
         myItem.checked = false;
     }
     while (selected.length > 0) {
@@ -174,6 +193,7 @@ function addBlackHoodieToCart() {
         newItem.appendChild(itemPrice);
         document.getElementById("itemsAdded").appendChild(newItem);
         shoppingCart.push(myItem);
+        saveToCart(myItem.id);
         myItem.checked = false;
     }
     while (selected.length > 0) {
@@ -205,6 +225,7 @@ function addWhiteHoodieToCart() {
         newItem.appendChild(itemPrice);
         document.getElementById("itemsAdded").appendChild(newItem);
         shoppingCart.push(myItem);
+        saveToCart(myItem.id);
         myItem.checked = false;
     }
     while (selected.length > 0) {
@@ -231,6 +252,7 @@ function addPintToCart() {
     newItem.appendChild(itemPrice);
     document.getElementById("itemsAdded").appendChild(newItem);
     shoppingCart.push(pint);
+    saveToCart(pint.id);
 }
 // Tulip
 function addTulipToCart() {
@@ -247,6 +269,7 @@ function addTulipToCart() {
     newItem.appendChild(itemPrice);
     document.getElementById("itemsAdded").appendChild(newItem);
     shoppingCart.push(tulip);
+    saveToCart(tulip.id);
 }
 // Growler
 function addGrowlerToCart() {
@@ -263,6 +286,7 @@ function addGrowlerToCart() {
     newItem.appendChild(itemPrice);
     document.getElementById("itemsAdded").appendChild(newItem);
     shoppingCart.push(growler);
+    saveToCart(growler.id);
 }
 
 // ACCESSORIES
@@ -284,6 +308,7 @@ function addStickerToCart() {
     newItem.appendChild(itemPrice);
     document.getElementById("itemsAdded").appendChild(newItem);
     shoppingCart.push(sticker);
+    saveToCart(sticker.id);
 }
 // Dad Hat
 function addDadHatToCart() {
@@ -300,6 +325,7 @@ function addDadHatToCart() {
     newItem.appendChild(itemPrice);
     document.getElementById("itemsAdded").appendChild(newItem);
     shoppingCart.push(dadHat);
+    saveToCart(dadHat.id);
 }
 // Panel Hat
 function addPanelHatToCart() {
@@ -316,6 +342,7 @@ function addPanelHatToCart() {
     newItem.appendChild(itemPrice);
     document.getElementById("itemsAdded").appendChild(newItem);
     shoppingCart.push(panelHat);
+    saveToCart(panelHat.id);
 }
 
 // COST CALCULATOR
@@ -411,6 +438,9 @@ function clearCart() {
     document.getElementById("subtotal").innerHTML = "$ 0";
     document.getElementById("taxes").innerHTML = "$ 0";
     document.getElementById("total").innerHTML = "$ 0";
+    // clear cart items from local storage & cartItems array
+    localStorage.clear();
+    cartItems = [];
 }
 
 
