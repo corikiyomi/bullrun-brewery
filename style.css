@@ -54,7 +54,11 @@ nav ul li {
     font-size: 1rem;
     font-weight: 500;
     color: #1A1A1A;
-    padding-right: 60px;
+    padding-right: 45px;
+}
+
+nav ul li:nth-of-type(3) {
+    width: 82px;
 }
 
 nav a {
