@@ -81,15 +81,12 @@ let cartItems = []; // local storage cart array
 
 // LOCAL STORAGE -- STORE SHOPPING CART IN LOCAL STORAGE
 function saveToCart(item) {
-    // Initialize local storage list to hold items or if it's not empty, add items to it as they are added to shopping cart
-    if (localStorage.getItem("cart")) {
-        // Cart already exists - add item to array
-        cartItems.push(item);
-        // Update the list in storage by using a join on the array
-        localStorage.cart = cartItems.join(",");
-    } else {
-        // Cart does not already exist
+    // If cart does not exist in local storage, create cart and add item
+    if (!(localStorage.getItem("cart")) && cartItems == []) {
         localStorage.setItem("cart", item);
+    } else {
+        cartItems.push(item);
+        localStorage.cart = cartItems.join(",");
     }
 }
 
