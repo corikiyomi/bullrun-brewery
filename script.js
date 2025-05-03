@@ -53,8 +53,6 @@ $(function() {
         console.log(data);
         // Populate data into section
 
-
-
     }).fail(function(){
         console.log("An error has occurred.");
     });
@@ -90,6 +88,82 @@ function saveToCart(item) {
     }
 }
 
+// LOAD CART FROM LOCAL STORAGE -- When site is loaded, check local storage for any items saved in the cart. If there are items in the cart, display them in the shopping cart. 
+$(function() {
+    // Retrieve cart items from local storage if they exist
+    let storedCart = localStorage.getItem("cart");
+    if (storedCart) {
+        // Split the string into an array
+        cartItems = storedCart.split(",");
+        let items = [];
+        // Loop through the itemIDs (saved in local storage) and display item details in shopping cart
+        for (let itemID of cartItems) {
+            let itemName;
+            let itemPrice;
+
+            if (itemID.startsWith("a1") || itemID.startsWith("a2") || itemID.startsWith("a3") || itemID.startsWith("a4")) {
+                items = itemID.split("size");
+                if (items[0] == "a1") {
+                    itemName = `Classic Tee — Black / Pink , ${items[1]}`;
+                    itemPrice = "$ 22";
+                } else if (items[0] == "a2") {
+                    itemName = `Classic Tee — White / Pink , ${items[1]}`;
+                    itemPrice = "$ 22";
+                } else if (items[0] == "a3") {
+                    itemName = `Bullrun Hoodie — Black, ${items[1]}`;
+                    itemPrice = "$ 35";
+                } else if (items[0] == "a4") {
+                    itemName = `Bullrun Hoodie — White, ${items[1]}`;
+                    itemPrice = "$ 35";
+                }
+            } else if (itemID.startsWith("drinkware")) {
+                if (itemID == "drinkware1") {
+                    itemName = "Bullrun Brewery Pint";
+                    itemPrice = "$ 14";
+                } else if (itemID == "drinkware2") {
+                    itemName = "Logo Tulip Glass";
+                    itemPrice = "$ 12";
+                } else if (itemID == "drinkware3") {
+                    itemName = "64oz. Growler — Amber";
+                    itemPrice = "$ 35";
+                }
+            } else if (itemID.startsWith("accessories")) {
+                if (itemID == "accessories1") {
+                    itemName = "Bullrun Brewery Sticker";
+                    itemPrice = "$ 2";
+                } else if (itemID == "accessories2") {
+                    itemName = "Dad Hat — Black";
+                    itemPrice = "$ 12";
+                } else if (itemID == "accessories3") {
+                    itemName = "5-Panel Hat — White";
+                    itemPrice = "$ 14";
+                }
+            }
+            console.log(itemName, itemPrice)
+
+            // Output to shopping cart display
+            document.getElementById("empty").classList.add("not-empty");
+            let p = document.createElement("p");
+            let itemDescription = document.createTextNode(`${itemName}`);
+            p.appendChild(itemDescription);
+
+            let itemPriceElement = document.createElement("p");
+            let price = document.createTextNode(`${itemPrice}`);
+            itemPriceElement.appendChild(price);
+
+            let newItem = document.createElement("div");
+            newItem.classList.add("item");
+            newItem.appendChild(p);
+            newItem.appendChild(itemPriceElement);
+            document.getElementById("itemsAdded").appendChild(newItem);
+        }
+
+        // Calculate cart subtotal/tax/total on load
+    }
+})
+
+
+
 // When size is selected and Add to Cart button is clicked, add quantity 1 for each size selected to the cart / cost calculator with the corresponding price.
 
 // APPAREL
@@ -123,6 +197,7 @@ function addBlackShirtToCart() {
         document.getElementById("itemsAdded").appendChild(newItem);
         // Add self to shoppingCart list for cost calculation
         shoppingCart.push(myItem);
+        console.log(myItem);
         // Add myItem to local storage cart array
         saveToCart(myItem.id);
         // Uncheck item
