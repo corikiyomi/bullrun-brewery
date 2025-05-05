@@ -8,9 +8,11 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap">
+        <link rel="stylesheet" href="./node_modules/jquery.slide/demo/css/jquery.slide.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <!-- <script src="https://static.elfsight.com/platform/platform.js" async></script> -->
-        
+        <script src="./node_modules/jquery.slide/dist/lib/jquery-1.11.1.min.js"></script>
+        <script src="./node_modules/jquery.slide/dist/jquery.slide.min.js"></script>
         <title>Bullrun Brewery</title>
     </head>
     <body>
@@ -44,8 +46,18 @@
                 </video>
             </section>
 
+            <!-- Image Slider/Carousel -->
             <section id="about">
-                <img src="./Images/exterior.png" alt="Exterior shot of Bullrun Brewery in Flagstaff, Arizona">
+                <div class="slide">
+                    <ul>
+                        <li><img src="./Images/exterior.png" alt="Exterior shot of brick building"></li>
+                        <li><img src="./Images/carousel/carousel1.jpeg" alt="Close-up of beer on bar-top"></li>
+                        <li><img src="./Images/carousel/carousel2.jpeg" alt="Man drinking beer"></li>
+                        <li><img src="./Images/carousel/carousel3.jpeg" alt="Overhead cheers with bar food"></li>
+                        <li><img src="./Images/carousel/carousel4.jpg" alt="Outdoor patio"></li>
+                    </ul>
+                </div>
+
                 <div id="aboutDescription">
                     <h2>Who we are</h2>
                     <p>Here at <span class="bullrun-brewery">Bullrun Brewery</span>, craft and community meets passion &amp; creativity.</p>

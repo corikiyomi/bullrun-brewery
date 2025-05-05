@@ -33,6 +33,12 @@ function changeMode() {
     }    
 }
 
+// ABOUT SECTION IMAGE SLIDER
+$(function() {
+    $('.slide').slide({
+        // Default options
+    });
+})
 
 // BACK TO TOP BUTTON
 let btnBackToTop = document.getElementById("backToTop");
@@ -75,7 +81,7 @@ function displayFavorites(data) {
 let shoppingCart = []; // all items in cart
 let selected = []; // specific to each item
 let cartItems = []; // local storage cart array
-let cartTotal = 0;
+let cartTotal = 0; // subtotal of all cart items, both loaded and newly added
 
 
 // LOCAL STORAGE -- STORE SHOPPING CART IN LOCAL STORAGE
@@ -215,7 +221,6 @@ function addBlackShirtToCart() {
         document.getElementById("itemsAdded").appendChild(newItem);
         // Add self to shoppingCart list for cost calculation
         shoppingCart.push(myItem);
-        console.log(myItem);
         // Add myItem to local storage cart array
         saveToCart(myItem.id);
         // Uncheck item
@@ -450,9 +455,9 @@ let total = 0;
 function calculateCost () {
     // Calculate Subtotal
     itemID = [];
-    let subtotal = 0;
-    let taxes = 0;
-    let total = 0;
+    subtotal = 0;
+    taxes = 0;
+    total = 0;
     
     // Add any cost from local storage saved cart items
     subtotal += cartTotal;
@@ -504,7 +509,6 @@ function calculateCost () {
     total = total.toFixed(2);
     // display the total in p
     document.getElementById("total").innerHTML = `$ ${total}`;
-    cartTotal = subtotal;
 }; 
 
 // CLEAR CART
@@ -515,6 +519,7 @@ function clearCart() {
     itemID = [];
     shoppingCart = [];
     subtotal = 0;
+    cartTotal = 0;
 
     document.getElementById("itemsAdded").innerHTML = "";
     // create new div class=item, id=empty
@@ -542,7 +547,7 @@ function clearCart() {
 
 // CHECKOUT CART
 function submitCart() {
-    let checkoutTotal = cartTotal * 1.056;
+    let checkoutTotal = subtotal * 1.056;
     checkoutTotal = checkoutTotal.toFixed(2);
     window.alert(`Thank you for shopping at Bullrun Brewery! \n\nYour total was $${checkoutTotal}.\n\nClose this window and keep browsing with us!`)
     // Reload page at same location, empties cart
