@@ -504,6 +504,7 @@ function calculateCost () {
     total = total.toFixed(2);
     // display the total in p
     document.getElementById("total").innerHTML = `$ ${total}`;
+    cartTotal = subtotal;
 }; 
 
 // CLEAR CART
@@ -541,7 +542,9 @@ function clearCart() {
 
 // CHECKOUT CART
 function submitCart() {
-    window.alert(`Thank you for shopping at Bullrun Brewery! \n\nYour total was $${total}.\n\nClose this window and keep browsing with us!`)
+    let checkoutTotal = cartTotal * 1.056;
+    checkoutTotal = checkoutTotal.toFixed(2);
+    window.alert(`Thank you for shopping at Bullrun Brewery! \n\nYour total was $${checkoutTotal}.\n\nClose this window and keep browsing with us!`)
     // Reload page at same location, empties cart
     location.reload();
 };
