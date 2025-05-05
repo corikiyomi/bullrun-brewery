@@ -43,7 +43,7 @@ window.addEventListener("scroll", e => {
 })
 
 
-// FAVORITE BREWS SECTION
+// OUR BREWS SECTION
 $(function() {
     let endpoint = "./brews.json";
     let brews = `${endpoint}`;
@@ -52,8 +52,6 @@ $(function() {
         displayFavorites(data);
         console.log(data);
         // Populate data into section
-
-
 
     }).fail(function(){
         console.log("An error has occurred.");
@@ -76,6 +74,113 @@ function displayFavorites(data) {
 // PRODUCTS
 let shoppingCart = []; // all items in cart
 let selected = []; // specific to each item
+let cartItems = []; // local storage cart array
+let cartTotal = 0;
+
+
+// LOCAL STORAGE -- STORE SHOPPING CART IN LOCAL STORAGE
+function saveToCart(item) {
+    // If cart does not exist in local storage, create cart and add item
+    if (!(localStorage.getItem("cart")) && cartItems == []) {
+        localStorage.setItem("cart", item);
+    } else {
+        cartItems.push(item);
+        localStorage.cart = cartItems.join(",");
+    }
+}
+
+// LOAD CART FROM LOCAL STORAGE -- When site is loaded, check local storage for any items saved in the cart. If there are items in the cart, display them in the shopping cart. 
+function storedCart() {
+    // Retrieve cart items from local storage if they exist
+    let storedCart = localStorage.getItem("cart");
+    if (storedCart) {
+        // Split the string into an array
+        cartItems = storedCart.split(",");
+        let items = [];
+        let subtotal = 0;
+        // Loop through the itemIDs (saved in local storage) and display item details in shopping cart
+        for (let itemID of cartItems) {
+            let itemName;
+            let itemPrice;
+
+            if (itemID.startsWith("a1") || itemID.startsWith("a2") || itemID.startsWith("a3") || itemID.startsWith("a4")) {
+                items = itemID.split("size");
+                if (items[0] == "a1") {
+                    itemName = `Classic Tee — Black / Pink , ${items[1]}`;
+                    itemPrice = "$ 22";
+                    subtotal += 22;
+                } else if (items[0] == "a2") {
+                    itemName = `Classic Tee — White / Pink , ${items[1]}`;
+                    itemPrice = "$ 22";
+                    subtotal += 22;
+                } else if (items[0] == "a3") {
+                    itemName = `Bullrun Hoodie — Black, ${items[1]}`;
+                    itemPrice = "$ 35";
+                    subtotal += 35;
+                } else if (items[0] == "a4") {
+                    itemName = `Bullrun Hoodie — White, ${items[1]}`;
+                    itemPrice = "$ 35";
+                    subtotal += 35;
+                }
+            } else if (itemID.startsWith("drinkware")) {
+                if (itemID == "drinkware1") {
+                    itemName = "Bullrun Brewery Pint";
+                    itemPrice = "$ 14";
+                    subtotal += 14;
+                } else if (itemID == "drinkware2") {
+                    itemName = "Logo Tulip Glass";
+                    itemPrice = "$ 12";
+                    subtotal += 12;
+                } else if (itemID == "drinkware3") {
+                    itemName = "64oz. Growler — Amber";
+                    itemPrice = "$ 35";
+                    subtotal += 35;
+                }
+            } else if (itemID.startsWith("accessories")) {
+                if (itemID == "accessories1") {
+                    itemName = "Bullrun Brewery Sticker";
+                    itemPrice = "$ 2";
+                    subtotal += 2;
+                } else if (itemID == "accessories2") {
+                    itemName = "Dad Hat — Black";
+                    itemPrice = "$ 12";
+                    subtotal += 12;
+                } else if (itemID == "accessories3") {
+                    itemName = "5-Panel Hat — White";
+                    itemPrice = "$ 14";
+                    subtotal += 14;
+                }
+            }
+            console.log(itemName, itemPrice, subtotal)
+            cartTotal = subtotal;
+
+            // Output to shopping cart display
+            document.getElementById("empty").classList.add("not-empty");
+            let p = document.createElement("p");
+            let itemDescription = document.createTextNode(`${itemName}`);
+            p.appendChild(itemDescription);
+
+            let itemPriceElement = document.createElement("p");
+            let price = document.createTextNode(`${itemPrice}`);
+            itemPriceElement.appendChild(price);
+
+            let newItem = document.createElement("div");
+            newItem.classList.add("item");
+            newItem.appendChild(p);
+            newItem.appendChild(itemPriceElement);
+            document.getElementById("itemsAdded").appendChild(newItem);
+
+            // Calculate cart subtotal/tax/total on load
+            document.getElementById("subtotal").innerHTML = `$ ${subtotal}`;
+            let taxes = subtotal * 0.056;
+            taxes = taxes.toFixed(2);
+            document.getElementById("taxes").innerHTML = `$ ${taxes}`;
+            let total;
+            total = parseFloat(subtotal) + parseFloat(taxes);
+            document.getElementById("total").innerHTML = `$ ${total}`
+        }
+    }
+}
 
 // When size is selected and Add to Cart button is clicked, add quantity 1 for each size selected to the cart / cost calculator with the corresponding price.
 
@@ -110,6 +215,9 @@ function addBlackShirtToCart() {
         document.getElementById("itemsAdded").appendChild(newItem);
         // Add self to shoppingCart list for cost calculation
         shoppingCart.push(myItem);
+        console.log(myItem);
+        // Add myItem to local storage cart array
+        saveToCart(myItem.id);
         // Uncheck item
         myItem.checked = false;
     }
@@ -143,6 +251,7 @@ function addWhiteShirtToCart() {
         newItem.appendChild(itemPrice);
         document.getElementById("itemsAdded").appendChild(newItem);
         shoppingCart.push(myItem);
+        saveToCart(myItem.id)
         myItem.checked = false;
     }
     while (selected.length > 0) {
@@ -174,6 +283,7 @@ function addBlackHoodieToCart() {
         newItem.appendChild(itemPrice);
         document.getElementById("itemsAdded").appendChild(newItem);
         shoppingCart.push(myItem);
+        saveToCart(myItem.id);
         myItem.checked = false;
     }
     while (selected.length > 0) {
@@ -205,6 +315,7 @@ function addWhiteHoodieToCart() {
         newItem.appendChild(itemPrice);
         document.getElementById("itemsAdded").appendChild(newItem);
         shoppingCart.push(myItem);
+        saveToCart(myItem.id);
         myItem.checked = false;
     }
     while (selected.length > 0) {
@@ -231,6 +342,7 @@ function addPintToCart() {
     newItem.appendChild(itemPrice);
     document.getElementById("itemsAdded").appendChild(newItem);
     shoppingCart.push(pint);
+    saveToCart(pint.id);
 }
 // Tulip
 function addTulipToCart() {
@@ -247,6 +359,7 @@ function addTulipToCart() {
     newItem.appendChild(itemPrice);
     document.getElementById("itemsAdded").appendChild(newItem);
     shoppingCart.push(tulip);
+    saveToCart(tulip.id);
 }
 // Growler
 function addGrowlerToCart() {
@@ -263,6 +376,7 @@ function addGrowlerToCart() {
     newItem.appendChild(itemPrice);
     document.getElementById("itemsAdded").appendChild(newItem);
     shoppingCart.push(growler);
+    saveToCart(growler.id);
 }
 
 // ACCESSORIES
@@ -284,6 +398,7 @@ function addStickerToCart() {
     newItem.appendChild(itemPrice);
     document.getElementById("itemsAdded").appendChild(newItem);
     shoppingCart.push(sticker);
+    saveToCart(sticker.id);
 }
 // Dad Hat
 function addDadHatToCart() {
@@ -300,6 +415,7 @@ function addDadHatToCart() {
     newItem.appendChild(itemPrice);
     document.getElementById("itemsAdded").appendChild(newItem);
     shoppingCart.push(dadHat);
+    saveToCart(dadHat.id);
 }
 // Panel Hat
 function addPanelHatToCart() {
@@ -316,6 +432,7 @@ function addPanelHatToCart() {
     newItem.appendChild(itemPrice);
     document.getElementById("itemsAdded").appendChild(newItem);
     shoppingCart.push(panelHat);
+    saveToCart(panelHat.id);
 }
 
 // COST CALCULATOR
@@ -333,10 +450,13 @@ let total = 0;
 function calculateCost () {
     // Calculate Subtotal
     itemID = [];
-    subtotal = 0;
-    taxes = 0;
-    total = 0;
+    let subtotal = 0;
+    let taxes = 0;
+    let total = 0;
     
+    // Add any cost from local storage saved cart items
+    subtotal += cartTotal;
+
     let a1 = /^a1/;
     let a2 = /^a2/;
     let a3 = /^a3/;
@@ -369,6 +489,7 @@ function calculateCost () {
             subtotal = subtotal + 15;
         }
     };
+
     // display the sum in the p
     document.getElementById("subtotal").innerHTML = `$ ${subtotal}`;
 
@@ -380,6 +501,7 @@ function calculateCost () {
 
     // Calculate Total
     total = parseFloat(subtotal) + parseFloat(taxes);
+    total = total.toFixed(2);
     // display the total in p
     document.getElementById("total").innerHTML = `$ ${total}`;
 }; 
@@ -411,6 +533,9 @@ function clearCart() {
     document.getElementById("subtotal").innerHTML = "$ 0";
     document.getElementById("taxes").innerHTML = "$ 0";
     document.getElementById("total").innerHTML = "$ 0";
+    // clear cart items from local storage & cartItems array
+    localStorage.clear();
+    cartItems = [];
 }
 
 
@@ -435,7 +560,7 @@ let fname = document.getElementById("first");
 let lname = document.getElementById("last");
 let nameRegEx = /[a-z]{3,}/i;
 let selectContact = document.querySelectorAll("fieldset > input[type=radio]");
-console.log(selectContact);
+
 let emailPreferred = document.getElementById("emailPreferred");
 let callPreferred = document.getElementById("callPreferred");
 let textPreferred = document.getElementById("textPreferred");
@@ -592,6 +717,9 @@ function submitForm() {
 
 // EVENT LISTENERS
 // ------------------------------------------------------------- //
+// On document.ready()
+$( document ).ready( storedCart );
+
 // Light / Dark Mode Toggle:
 document.getElementById("lightDarkMode").addEventListener("click", changeMode);
 
