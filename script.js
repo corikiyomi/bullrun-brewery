@@ -75,6 +75,7 @@ function displayFavorites(data) {
 let shoppingCart = []; // all items in cart
 let selected = []; // specific to each item
 let cartItems = []; // local storage cart array
+let cartTotal = 0;
 
 
 // LOCAL STORAGE -- STORE SHOPPING CART IN LOCAL STORAGE
@@ -151,6 +152,7 @@ function storedCart() {
                 }
             }
             console.log(itemName, itemPrice, subtotal)
+            cartTotal = subtotal;
 
             // Output to shopping cart display
             document.getElementById("empty").classList.add("not-empty");
@@ -451,6 +453,9 @@ function calculateCost () {
     let subtotal = 0;
     let taxes = 0;
     let total = 0;
+    
+    // Add any cost from local storage saved cart items
+    subtotal += cartTotal;
 
     let a1 = /^a1/;
     let a2 = /^a2/;
@@ -496,6 +501,7 @@ function calculateCost () {
 
     // Calculate Total
     total = parseFloat(subtotal) + parseFloat(taxes);
+    total = total.toFixed(2);
     // display the total in p
     document.getElementById("total").innerHTML = `$ ${total}`;
 }; 
