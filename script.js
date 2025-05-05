@@ -89,13 +89,14 @@ function saveToCart(item) {
 }
 
 // LOAD CART FROM LOCAL STORAGE -- When site is loaded, check local storage for any items saved in the cart. If there are items in the cart, display them in the shopping cart. 
-$(function() {
+function storedCart() {
     // Retrieve cart items from local storage if they exist
     let storedCart = localStorage.getItem("cart");
     if (storedCart) {
         // Split the string into an array
         cartItems = storedCart.split(",");
         let items = [];
+        let subtotal = 0;
         // Loop through the itemIDs (saved in local storage) and display item details in shopping cart
         for (let itemID of cartItems) {
             let itemName;
@@ -106,40 +107,50 @@ $(function() {
                 if (items[0] == "a1") {
                     itemName = `Classic Tee — Black / Pink , ${items[1]}`;
                     itemPrice = "$ 22";
+                    subtotal += 22;
                 } else if (items[0] == "a2") {
                     itemName = `Classic Tee — White / Pink , ${items[1]}`;
                     itemPrice = "$ 22";
+                    subtotal += 22;
                 } else if (items[0] == "a3") {
                     itemName = `Bullrun Hoodie — Black, ${items[1]}`;
                     itemPrice = "$ 35";
+                    subtotal += 35;
                 } else if (items[0] == "a4") {
                     itemName = `Bullrun Hoodie — White, ${items[1]}`;
                     itemPrice = "$ 35";
+                    subtotal += 35;
                 }
             } else if (itemID.startsWith("drinkware")) {
                 if (itemID == "drinkware1") {
                     itemName = "Bullrun Brewery Pint";
                     itemPrice = "$ 14";
+                    subtotal += 14;
                 } else if (itemID == "drinkware2") {
                     itemName = "Logo Tulip Glass";
                     itemPrice = "$ 12";
+                    subtotal += 12;
                 } else if (itemID == "drinkware3") {
                     itemName = "64oz. Growler — Amber";
                     itemPrice = "$ 35";
+                    subtotal += 35;
                 }
             } else if (itemID.startsWith("accessories")) {
                 if (itemID == "accessories1") {
                     itemName = "Bullrun Brewery Sticker";
                     itemPrice = "$ 2";
+                    subtotal += 2;
                 } else if (itemID == "accessories2") {
                     itemName = "Dad Hat — Black";
                     itemPrice = "$ 12";
+                    subtotal += 12;
                 } else if (itemID == "accessories3") {
                     itemName = "5-Panel Hat — White";
                     itemPrice = "$ 14";
+                    subtotal += 14;
                 }
             }
-            console.log(itemName, itemPrice)
+            console.log(itemName, itemPrice, subtotal)
 
             // Output to shopping cart display
             document.getElementById("empty").classList.add("not-empty");
@@ -156,13 +167,18 @@ $(function() {
             newItem.appendChild(p);
             newItem.appendChild(itemPriceElement);
             document.getElementById("itemsAdded").appendChild(newItem);
+
+            // Calculate cart subtotal/tax/total on load
+            document.getElementById("subtotal").innerHTML = `$ ${subtotal}`;
+            let taxes = subtotal * 0.056;
+            taxes = taxes.toFixed(2);
+            document.getElementById("taxes").innerHTML = `$ ${taxes}`;
+            let total;
+            total = parseFloat(subtotal) + parseFloat(taxes);
+            document.getElementById("total").innerHTML = `$ ${total}`
         }
-
-        // Calculate cart subtotal/tax/total on load
     }
-})
-
-
+}
 
 // When size is selected and Add to Cart button is clicked, add quantity 1 for each size selected to the cart / cost calculator with the corresponding price.
 
@@ -432,10 +448,10 @@ let total = 0;
 function calculateCost () {
     // Calculate Subtotal
     itemID = [];
-    subtotal = 0;
-    taxes = 0;
-    total = 0;
-    
+    let subtotal = 0;
+    let taxes = 0;
+    let total = 0;
+
     let a1 = /^a1/;
     let a2 = /^a2/;
     let a3 = /^a3/;
@@ -468,6 +484,7 @@ function calculateCost () {
             subtotal = subtotal + 15;
         }
     };
+
     // display the sum in the p
     document.getElementById("subtotal").innerHTML = `$ ${subtotal}`;
 
@@ -537,7 +554,7 @@ let fname = document.getElementById("first");
 let lname = document.getElementById("last");
 let nameRegEx = /[a-z]{3,}/i;
 let selectContact = document.querySelectorAll("fieldset > input[type=radio]");
-console.log(selectContact);
+
 let emailPreferred = document.getElementById("emailPreferred");
 let callPreferred = document.getElementById("callPreferred");
 let textPreferred = document.getElementById("textPreferred");
@@ -694,6 +711,9 @@ function submitForm() {
 
 // EVENT LISTENERS
 // ------------------------------------------------------------- //
+// On document.ready()
+$( document ).ready( storedCart );
+
 // Light / Dark Mode Toggle:
 document.getElementById("lightDarkMode").addEventListener("click", changeMode);
 
